@@ -1,3 +1,22 @@
+// {
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "type": "chrome",
+//             "request": "launch",
+//             "name": "Launch Chrome against localhost",
+//             "url": "http://localhost:8080",
+//             "webRoot": "${workspaceRoot}"
+//         },
+//         {
+//             "type": "chrome",
+//             "request": "attach",
+//             "name": "Attach to Chrome",
+//             "port": 9222,
+//             "webRoot": "${workspaceRoot}"
+//         }
+//     ]
+// }
 {
     // Use IntelliSense to learn about possible Node.js debug attributes.
     // Hover to view descriptions of existing attributes.
@@ -9,7 +28,9 @@
             "request": "launch",
             "name": "Launch Tests",
             "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
-            "args": ["${workspaceRoot}/protractor.conf.js"],
+            "args": [
+                "${workspaceRoot}/protractor.conf.js"
+            ],
             "cwd": "${workspaceRoot}",
             "outFiles": []
         },
@@ -30,7 +51,7 @@
             "sourceMapPathOverrides": {
                 "webpack:///./*": "${webRoot}/*",
                 "webpack:///./~/*": "${workspaceRoot}/node_modules/*",
-                "webpack:///*": "*", 
+                "webpack:///*": "*",
                 "webpack:///src/app/*": "${workspaceRoot}/src/app/*"
             }
         }
