@@ -5,11 +5,20 @@
 <nav>
 	<!--routerLink - директива задает адрес для ссылки -->
 	<!--routerLinkActive - директива устанавливает или удаляет класс в зависимости от состояния маршрута-->
-	<a routerLink="/list1" routerLinkActive="active">List 1</a>
-	<a routerLink="/list2" routerLinkActive="active">List 2</a>
+	<a routerLink="/list1" routerLinkActive="active">Lesson 1</a>
+	<a routerLink="/list2" routerLinkActive="active">Lesson 2</a>
 </nav>
 
-<div>
-	<!--router-outlet после данного элемента будет отображаться компонент, который выбирает роутер в соответствии с маршрутом-->
-	<router-outlet></router-outlet>
+<div style="background-color: yellow; width: 90%; float: left">
+	<!--router-outlet после данного элемента будет отображаться компонент, который выбирает роутер в соответствии с маршрутом-->	
+	<router-outlet ></router-outlet>
+</div>
+<div style="background-color: lightblue; width: 10%; float:right" >	
+	<!--<div>Настройка маршрутизации</div> 
+	<ol>
+		<li>&lt; &gt;</li>
+		<li>&lt; head &gt; <br> &lt;base href="/" &gt;</li>
+		<li>import {RouterModule} from ""</li>
+	</ol>-->
+	
 </div>
