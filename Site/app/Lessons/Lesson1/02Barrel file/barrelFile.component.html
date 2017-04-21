@@ -1,0 +1,58 @@
+<div class="section">
+    <h1>Barrel file</h1>
+    <div><b>Barrel file</b> - это специальный файл который включает несколько експоротов. Он делает реекспорт модулей упрощая
+        доступ к ним</div>
+    <div>так же барел файл сокращает количество импортов import &#123;RouterModule&#125; from "@angular/router" </div>
+    <div>итак как же используються барел фафды в данном примере. идея в том чтобы все импорты касающиеся папки lists поместить
+        в один файл с которым потом работать</div>
+    <div>С баррел файлом и без</div>
+    <div><h3>без баррел файла</h3></div>
+    <div>
+        <pre>
+        import &#123; NgModule &#125; from "@angular/core";
+        import &#123; BrowserModule &#125; from "@angular/platform-browser";
+        import &#123; RouterModule &#125; from "@angular/router"; // модуль для маршрутизации
+
+        import &#123; AppComponent &#125; from "./app.component";                         <b>импорт главной компонены</b>
+        import &#123; List1Component &#125; from "./list1/list1.component";               <b>импорт лист 1 компоненты</b>
+        import &#123; List2Component &#125; from "./list2/list2.component";               <b>импорт лист 2 компоненты</b>
+
+        @NgModule(&#123;
+            imports: [
+                BrowserModule,
+                RouterModule.forRoot([ // настройка маршрутов                             <b>настройка роутинга</b>
+                    &#123; path: "list1", component: List1Component &#125;, 
+                    &#123; path: "list2", component: List2Component &#125;,
+                    &#123; path: "", redirectTo: "list1", pathMatch: "full" &#125; 
+                ])
+            ],
+            declarations: [AppComponent, List1Component, List2Component],                  <b>декларация используемых компонент</b> 
+            bootstrap: [AppComponent]
+        &#125;)
+        export class AppModule &#123; &#125;
+        </pre>
+    </div>
+    <div><h3>С баррел файлом</h3></div>
+    <div>
+        <pre>
+            import &#123; NgModule &#125; from "@angular/core";
+            import &#123; BrowserModule &#125; from "@angular/platform-browser";
+            import &#123; RouterModule, Routes &#125; from "@angular/router"; // модуль для маршрутизации
+
+            import &#123; List1Component, List2Component, List3Component &#125; from "./lists/index";  <b>импорт компонент из баррел файла</b>          
+            import &#123; AppComponent &#125; from "./app.component";
+            import &#123; ListsModule, routes &#125; from  "./lists/index"; <b>импорт компонент из баррел файла</b> 
+
+            @NgModule(&#123;
+                imports: [
+                    BrowserModule,
+                    ListsModule, <b>импорт модуля из баррел файла</b> 
+                    RouterModule.forRoot(routes)
+                ],
+                declarations: [AppComponent],
+                bootstrap: [AppComponent]
+            &#125;)
+            export class AppModule &#123; &#125;
+        </pre>
+    </div>
+</div>

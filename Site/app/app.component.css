@@ -9,10 +9,31 @@ nav a {
     text-decoration: none;
     transition: all 0.5s;
     color: #E03237;
+    margin-left: 10px
 }
 nav a.active {
     border-radius: 3px;
     padding: 2px 8px;
     background-color: #E03237;
     color:white;
+}
+nav div {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}
+.left-menu{
+    border: solid 2px black;
+    border-radius: 10px;
+    background-color: lightgray;
+    width: 20%;
+    float: left
+}
+.right-menu{
+    border: solid 2px black;
+    border-radius: 10px;
+    background-color: lightyellow;
+    width: 79%;
+    float: right
 }

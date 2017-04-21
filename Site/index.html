@@ -17,14 +17,26 @@
     <!--Настройка SystemJS -->
     <script src="systemjs.config.js"></script>
 
+    <script src='http://yastatic.net/highlightjs/8.2/highlight.min.js' /></script>
+    <script type='text/javascript'>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <link href='http://yastatic.net/highlightjs/8.2/styles/solarized_light.min.css' rel='stylesheet'/>
+
     <script>
-      System.import('app').catch(function(err){ 
-          console.error(err); 
+        System.import('app').catch(function (err) {
+            console.error(err);
         });
     </script>
 </head>
 
 <body>
+    <pre><code class="php">
+function my_php_demo_snippet()
+    var $test = 'Hello!';
+    echo $test;
+
+</code></pre>
     <my-app>Loading...</my-app>
 </body>
 
