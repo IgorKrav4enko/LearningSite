@@ -7,20 +7,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var CounterComponent = (function () {
-    function CounterComponent() {
-        this.name = 'default name';
-        this.counterValue = 0;
-        this.counterStep = 1;
+var InputParentComponent = (function () {
+    function InputParentComponent() {
+        this.mytext = '1231234123123123123';
     }
-    return CounterComponent;
+    return InputParentComponent;
 }());
-CounterComponent = __decorate([
+InputParentComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'my-counter',
-        templateUrl: 'counter.component.html'
+        selector: 'my-input-parent',
+        templateUrl: 'parent.component.html'
     })
-], CounterComponent);
-exports.CounterComponent = CounterComponent;
-//# sourceMappingURL=counter.component.js.map
+], InputParentComponent);
+exports.InputParentComponent = InputParentComponent;
+//# sourceMappingURL=parent.component.js.map

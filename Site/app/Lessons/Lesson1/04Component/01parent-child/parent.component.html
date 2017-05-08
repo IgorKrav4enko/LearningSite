@@ -1,0 +1,23 @@
+<div>
+  <h1>Компоненты</h1>
+  <div>
+    <p>Для посторного использования одного компонента в другом необходимо использовать имя selector дочернего компонента в template
+      родитеьского родительского </p>
+    <h4>Дочерний компонент</h4>
+    <pre>
+      <code highlight class="typescript" >
+@Component(&#123;
+    moduleId: module.id,
+    selector: <b>'my-child',</b>
+    template:
+    `
+    &lt;div&gt;
+    &lt;h1&gt;Hello child&lt;/h1&gt;
+    &lt;/div&gt;
+    `  
+&#125;)
+      </code>
+    </pre>
+  </div>
+  <my-child></my-child> 
+</div>

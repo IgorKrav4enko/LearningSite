@@ -7,20 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var highliteCode_directive_1 = require("../../../../Directives/highliteCode.directive");
-//declare var hljs: any;
-var InputComponent = (function () {
-    function InputComponent() {
+var ChildComponent = (function () {
+    function ChildComponent() {
     }
-    return InputComponent;
+    return ChildComponent;
 }());
-InputComponent = __decorate([
+ChildComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'my-input',
-        templateUrl: 'input.component.html',
-        directives: [highliteCode_directive_1.HighlightCodeDirective]
+        selector: 'my-child',
+        templateUrl: 'child.component.html'
     })
-], InputComponent);
-exports.InputComponent = InputComponent;
-//# sourceMappingURL=input.component.js.map
+], ChildComponent);
+exports.ChildComponent = ChildComponent;
+//# sourceMappingURL=child.component.js.map

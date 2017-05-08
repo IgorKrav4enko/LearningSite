@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var hljs;
+//let hljs: any
 var HighlightCodeDirective = (function () {
     function HighlightCodeDirective(eltRef) {
         this.eltRef = eltRef;
@@ -27,4 +27,4 @@ HighlightCodeDirective = __decorate([
     __metadata("design:paramtypes", [core_1.ElementRef])
 ], HighlightCodeDirective);
 exports.HighlightCodeDirective = HighlightCodeDirective;
-//# sourceMappingURL=highliteCode.directive.js.map
+//# sourceMappingURL=highlightCode.directive.js.map

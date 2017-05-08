@@ -6,14 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var counter_component_1 = require("./../04Component/01input/counter.component");
+var child_component_1 = require("./../04Component/02Input/child.component");
+var parent_component_1 = require("./../04Component/02Input/parent.component");
+var child_component_2 = require("./../04Component/01parent-child/child.component");
+var parent_component_2 = require("./../04Component/01parent-child/parent.component");
+var highlightCode_directive_1 = require("./../../../Directives/highlightCode.directive");
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var index_1 = require("./index");
 var routing_component_1 = require("../01Routing/routing.component");
 var barrelFile_component_1 = require("../02Barrel file/barrelFile.component");
 var css_component_1 = require("../03CSS/css.component");
-var input_component_1 = require("./../04Component/01input/input.component");
 var ListsModule = (function () {
     function ListsModule() {
     }
@@ -22,7 +25,9 @@ var ListsModule = (function () {
 ListsModule = __decorate([
     core_1.NgModule({
         imports: [common_1.CommonModule],
-        declarations: [index_1.List1Component, index_1.List2Component, index_1.List3Component, routing_component_1.RoutingComponent, barrelFile_component_1.BarrelFileComponent, css_component_1.CssComponent, input_component_1.InputComponent, counter_component_1.CounterComponent],
+        declarations: [index_1.List1Component, index_1.List2Component, index_1.List3Component,
+            routing_component_1.RoutingComponent, barrelFile_component_1.BarrelFileComponent, css_component_1.CssComponent, parent_component_2.ParentComponent, child_component_2.ChildComponent,
+            highlightCode_directive_1.HighlightCodeDirective, parent_component_1.InputParentComponent, child_component_1.InputChildComponent],
         exports: [index_1.List1Component, index_1.List2Component, index_1.List3Component]
     })
 ], ListsModule);
