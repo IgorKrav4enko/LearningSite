@@ -1,3 +1,4 @@
+import { escapeHTMLPipe } from './../../../Pipes/escapeHTML.pipe';
 import { InputChildComponent } from './../04Component/02Input/child.component';
 import { InputParentComponent } from './../04Component/02Input/parent.component';
 import { ChildComponent } from './../04Component/01parent-child/child.component';
@@ -16,7 +17,7 @@ import { CssComponent } from "../03CSS/css.component";
     imports: [CommonModule],
     declarations: [List1Component, List2Component, List3Component,
         RoutingComponent, BarrelFileComponent, CssComponent, ParentComponent, ChildComponent,
-        HighlightCodeDirective ,InputParentComponent, InputChildComponent],
+        HighlightCodeDirective ,InputParentComponent, InputChildComponent,escapeHTMLPipe],
     exports: [List1Component, List2Component, List3Component]
 })
 export class ListsModule { }

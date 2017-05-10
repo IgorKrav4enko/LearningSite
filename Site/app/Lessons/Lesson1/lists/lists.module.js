@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var escapeHTML_pipe_1 = require("./../../../Pipes/escapeHTML.pipe");
 var child_component_1 = require("./../04Component/02Input/child.component");
 var parent_component_1 = require("./../04Component/02Input/parent.component");
 var child_component_2 = require("./../04Component/01parent-child/child.component");
@@ -27,7 +28,7 @@ ListsModule = __decorate([
         imports: [common_1.CommonModule],
         declarations: [index_1.List1Component, index_1.List2Component, index_1.List3Component,
             routing_component_1.RoutingComponent, barrelFile_component_1.BarrelFileComponent, css_component_1.CssComponent, parent_component_2.ParentComponent, child_component_2.ChildComponent,
-            highlightCode_directive_1.HighlightCodeDirective, parent_component_1.InputParentComponent, child_component_1.InputChildComponent],
+            highlightCode_directive_1.HighlightCodeDirective, parent_component_1.InputParentComponent, child_component_1.InputChildComponent, escapeHTML_pipe_1.escapeHTMLPipe],
         exports: [index_1.List1Component, index_1.List2Component, index_1.List3Component]
     })
 ], ListsModule);

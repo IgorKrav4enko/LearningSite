@@ -1,5 +1,5 @@
 import { Directive, ElementRef } from "@angular/core";
-//let hljs: any
+// let hljs: any
 @Directive({
   selector: 'code[highlight]'
 })

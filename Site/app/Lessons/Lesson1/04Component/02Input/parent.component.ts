@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
     templateUrl: 'parent.component.html'
 })
 export class InputParentComponent {
-mytext:string = '1231234123123123123'
+    myText: string = '<div style="border: solid 2px grey; border-radius:5px; margin: 5px; padding: 5px" >    <p> Name = {{name}}</p>    <p> Counter = {{counterValue}}</p>    <button (click)="increment()"> Increment</button></div>'
 }

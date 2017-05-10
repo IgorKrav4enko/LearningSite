@@ -2,10 +2,16 @@
     <p>Для пердачи данных из родительского компонента в дочерний используються привязки даннх</p>
     <p> рассмотрим 2 компонента</p>
 
-<div>[innerHTML]="mytext"</div>
- <h3>Дочерний </h3>
-<div>
-    <pre>
+    <div>
+        <pre>
+        <code highlight class="typescript">
+    {{myText}}
+     </code>
+    </pre>
+    </div>
+    <h3>Дочерний </h3>
+    <div>
+        <pre>
         <code highlight class="typescript">
             @Component(&#123;
                 moduleId: module.id,
@@ -23,13 +29,13 @@
             &#125;)
         </code>
     </pre>
-</div>
+    </div>
 
 
 
-<h3>Родительский </h3>
-<div>
-    <pre>
+    <h3>Родительский </h3>
+    <div>
+        <pre>
         <code highlight class="typescript">
             @Component(&#123;
                 moduleId: module.id,
@@ -52,7 +58,7 @@
             export class InputParentComponent &#123; &#125;
         </code>
     </pre>
-</div>
+    </div>
     <my-input-child></my-input-child>
     <my-input-child [name]="'First counter'"></my-input-child>
     <my-input-child [name]="'Second counter'" [counterValue]="5"></my-input-child>
