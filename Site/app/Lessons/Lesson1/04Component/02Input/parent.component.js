@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var InputParentComponent = (function () {
     function InputParentComponent() {
-        this.myText = '<div style="border: solid 2px grey; border-radius:5px; margin: 5px; padding: 5px" >    <p> Name = {{name}}</p>    <p> Counter = {{counterValue}}</p>    <button (click)="increment()"> Increment</button></div>';
+        this.myText = '<div style="border: solid 2px grey; border-radius:5px; margin: 5px; padding: 5px" > <p> Name = {{name}}</p>    <p> Counter = {{counterValue}}</p>    <button (click)="increment()"> Increment</button></div>';
     }
     return InputParentComponent;
 }());

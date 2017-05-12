@@ -24,7 +24,8 @@ var escapeHTMLPipe = (function () {
         return this.tagsToReplace[tag] || tag;
     };
     escapeHTMLPipe.prototype.replaceTags = function (str) {
-        return str.replace(/[&<>]/g, this.replaceTag);
+        var _this = this;
+        return str.replace(/[&<>]/g, function (a) { return _this.replaceTag(a); });
     };
     return escapeHTMLPipe;
 }());

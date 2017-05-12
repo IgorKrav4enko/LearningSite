@@ -16,11 +16,11 @@ export class escapeHTMLPipe implements PipeTransform {
         return value;
     }
 
-    replaceTag(tag) {
+    replaceTag(tag) :string {
         return this.tagsToReplace[tag] || tag;
     }
 
-    replaceTags(str) {
-        return str.replace(/[&<>]/g, this.replaceTag);
+    replaceTags(str): string {
+        return str.replace(/[&<>]/g, (a) => this.replaceTag(a));
     }
 }

@@ -24,36 +24,56 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Tests",
-            "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
-            "args": [
-                "${workspaceRoot}/protractor.conf.js"
-            ],
-            "cwd": "${workspaceRoot}",
-            "outFiles": []
-        },
-        {
-            "type": "node",
-            "request": "attach",
-            "name": "Attach to Process",
-            "port": 5858,
-            "outFiles": []
-        },
-        {
+            "name": "Launch localhost with sourcemaps",
             "type": "chrome",
             "request": "launch",
-            "name": "Launch Web Studio",
             "url": "http://localhost:3000",
-            "webRoot": "${workspaceRoot}",
-            "userDataDir": "${workspaceRoot}/temp",
-            "sourceMapPathOverrides": {
-                "webpack:///./*": "${webRoot}/*",
-                "webpack:///./~/*": "${workspaceRoot}/node_modules/*",
-                "webpack:///*": "*",
-                "webpack:///src/app/*": "${workspaceRoot}/src/app/*"
-            }
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}"
         }
+        //  {
+        //     "type": "node",
+        //     "request": "launch",
+        //     "name": "Launch Tests",
+        //     "program": "${workspaceRoot}\\app",
+        //     "args": [
+        //         "${workspaceRoot}/protractor.conf.js"
+        //     ],
+        //     "cwd": "${workspaceRoot}",
+        //     "outFiles": []
+        // },
+        // {
+        //     "type": "node",
+        //     "request": "launch",
+        //     "name": "Launch Tests",
+        //     "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+        //     "args": [
+        //         "${workspaceRoot}/protractor.conf.js"
+        //     ],
+        //     "cwd": "${workspaceRoot}",
+        //     "outFiles": []
+        // },
+        // {
+        //     "type": "node",
+        //     "request": "attach",
+        //     "name": "Attach to Process",
+        //     "port": 5858,
+        //     "outFiles": []
+        // },
+        // {
+        //     "type": "chrome",
+        //     "request": "launch",
+        //     "name": "Launch Web Studio",
+        //     "url": "http://localhost:3002",
+        //     "webRoot": "${workspaceRoot}/app",
+        //     "sourceMaps": true,
+        //     "userDataDir": "${workspaceRoot}/.vscode/chrome",
+        //     // "sourceMapPathOverrides": {
+        //     //     "webpack:///./*": "${webRoot}/*",
+        //     //     "webpack:///./~/*": "${workspaceRoot}/node_modules/*",
+        //     //     "webpack:///*": "*",
+        //     //     "webpack:///src/app/*": "${workspaceRoot}/src/app/*"
+        //     // }
+        // }
     ]
 }
