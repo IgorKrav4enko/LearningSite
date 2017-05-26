@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { DataService } from '../../../../Services/data-service.service';
+import { Example } from './../../../../Services/data';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
     selector: 'my-input-parent',
-    templateUrl: 'parent.component.html'
+    templateUrl: 'parent.component.html',
+    providers: [DataService]
 })
-export class InputParentComponent {
-    myText: string = '<div style="border: solid 2px grey; border-radius:5px; margin: 5px; padding: 5px" > <p> Name = {{name}}</p>    <p> Counter = {{counterValue}}</p>    <button (click)="increment()"> Increment</button></div>'
+export class InputParentComponent implements OnInit {
+    child: Example[]
+
+    constructor(private dataService: DataService) { }
+    ngOnInit() {
+        this.child = this.dataService.getData();
+    }
 }

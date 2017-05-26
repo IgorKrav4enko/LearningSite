@@ -1,64 +1,49 @@
 <div>
     <p>Для пердачи данных из родительского компонента в дочерний используються привязки даннх</p>
     <p> рассмотрим 2 компонента</p>
-
-    <div>
-        <pre>
-        <code highlight class="typescript">
-    {{myText | escapeHTML}}
-     </code>
-    </pre>
-    </div> 
     <h3>Дочерний </h3>
     <div>
-        <pre>
-        <code highlight class="typescript">
-            @Component(&#123;
-                moduleId: module.id,
-                selector: 'my-input-child',
-                // templateUrl: 'child.component.html',
-                template: 
-                `
-                    &lt;div style=&quot;border: solid 2px grey; border-radius:5px&quot;&gt;
-                        &amp;lt;p&amp;gt; Name = &amp;amp;#123;&amp;amp;#123;name&amp;amp;#125;&amp;amp;#125;&amp;lt;/p&amp;gt;
-                        &amp;lt;p&amp;gt; Counter = &amp;amp;#123;&amp;amp;#123;counterValue&amp;amp;#125;&amp;amp;#125;&amp;lt;/p&amp;gt;
-                        &amp;lt;button (click)=&amp;quot;increment()&amp;quot;&amp;gt; Increment&amp;lt;/button&amp;gt;
-                    &lt;/div&gt;
-                `,
-                inputs: ["name"]
-            &#125;)
-        </code>
-    </pre>
+        <my-htmlhighlighter [htmlContent]="child[0].text"></my-htmlhighlighter>
     </div>
-
-
-
     <h3>Родительский </h3>
     <div>
-        <pre>
-        <code highlight class="typescript">
-            @Component(&#123;
-                moduleId: module.id,
-                selector: 'my-input-parent',
-                // templateUrl: 'parent.component.html'
-                template:
-                `
-                &lt;div&gt;
-                &lt;pre&gt;
-                    &lt;code&gt;
-                        &lt;my-input-child&gt;&lt;/my-input-child&gt;
-                        &lt;my-input-child [name]=&quot;'First counter'&quot;&gt;&lt;/my-input-child&gt;
-                        &lt;my-input-child [name]=&quot;'Second counter'&quot; [counterValue]=&quot;5&quot;&gt;&lt;/my-input-child&gt;
-                        &lt;my-input-child [name]=&quot;'Third counter'&quot; [counterValue]=&quot;5&quot; [counterStep]=&quot;5&quot; &gt;&lt;/my-input-child&gt;
-                    &lt;/code&gt;
-                &lt;/pre&gt;       
-                &lt;/div&gt;
-                `
-            &#125;)
-            export class InputParentComponent &#123; &#125;
-        </code>
-    </pre>
+        <my-htmlhighlighter [htmlContent]="child[1].text"></my-htmlhighlighter>
     </div>
+    <h4>Особенности примера</h4>
+    <p>Как видим для использования дочернего компонента в родительском достаточно в родительском написать имя <code>selector</code>       
+     дочернего компонета. Для передачи данных в дочерние компоненты есть несколько способов:
+    </p>
+    <ol>
+        <li>
+            Передача строки или числа <code>[name]="'First counter'"</code>, <code>[counterValue]="5"</code>. В правой<code>[name]</code>           
+             части мы используем имя переменной(свойства) дочернего компонента которой мы хотим присвоить значение. В правой
+            части <code>"'First counter'"</code> мы передаем переменную(свойство) родительского обьекта выделенное "" либо
+            ''. В нашем случае мы передаем <code>"'First counter'"</code>, <code>"5"</code> это строка и число.
+        </li>
+        <li>
+            Так же мы можем передвавать переменную(свойство) родительского обьекта выделенное "" либо ''. Если использовать имя несуществующей
+            переменной то мы получим ошибку.
+        </li>
+        <li>
+            Перейдем к дочернему компоненту. Тут используться несколько видов привязки. <code>Name = {{name}}</code> в данном случае используеться <b>одностороння привязка</b>
+            и вместо <code>{{name}}</code> будет подставляться значение свойства <code>name</code> дочернего компонента. Как мы видим у дочернего компонента есть свойство  name
+            <code>name: string = "default child component name "</code> которое типизировно типом <code>string</code> и имеет дефолтное значение 
+            <code>"default child component name "</code>. Так же необходимо обратить внимание на метаданные дочернего компонента <code>inputs: ["name"]</code>. 
+        </li>
+        <li>
+            Так же еще один способ указать что значение свойства будет задаваться из вне это декорировать его <code>@Input()</code> <code>@Input() counterValue: number = 0;</code> 
+        </li>
+        
+        <li>есть возможность изменить смапить значение передаваемого значения и принимаемого свойства </li>
+        <li>
+            Соблюдение всех этих условий дают нам возможность пердавать данные из родительского компонента в дочерний и использовать их в дочернем компоненте.
+        </li>
+        <li>
+            Так же мы видим что в дочернем компонете используеться привязка события на кнопке <code>(click)="increment()"</code> где на событие <code>(click)</code> 
+            привязываеться функция <code>"increment()"</code> из класа дочернего компонента
+        </li>
+    </ol>
+
     <my-input-child></my-input-child>
     <my-input-child [name]="'First counter'"></my-input-child>
     <my-input-child [name]="'Second counter'" [counterValue]="5"></my-input-child>

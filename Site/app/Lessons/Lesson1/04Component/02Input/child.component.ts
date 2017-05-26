@@ -3,15 +3,15 @@ import {Input, Component} from '@angular/core';
 @Component({
     moduleId: module.id,
     selector: 'my-input-child',
-     templateUrl: 'child.component.html',
-    // template: 
-    // `
-    //     &lt;div style=&quot;border: solid 2px grey; border-radius:5px&quot;&gt;
-    //         &lt;p&gt; Name = #123;name#125;#125;/p&gt;
-    //         &lt;p&gt; Counter = #123;#123;counterValue#125;#125;&lt;/p&gt;
-    //         &lt;button (click)=&quot;increment()&quot;&gt; Increment&lt;/button&gt;
-    //     &lt;/div&gt;
-    // `,
+    //templateUrl: 'child.component.html',   
+    template:
+    `
+        <div style="border: solid 2px grey; border-radius:5px; margin: 5px; padding: 5px" >
+            <p> Name = {{name}}</p>
+            <p> Counter = {{counterValue}}</p>
+            <button (click)="increment()"> Increment</button>
+        </div>
+    ` ,
     inputs: ["name"]
 })
 

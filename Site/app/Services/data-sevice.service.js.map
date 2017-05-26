@@ -1,0 +1,1 @@
+{"version":3,"file":"data-sevice.service.js","sourceRoot":"","sources":["data-sevice.service.ts"],"names":[],"mappings":";;AACA;IAAA;QAEI,UAAK,GAAW,6lBAuBlB,CAAA;QACU,SAAI,GAAc;YACtB;gBACI,IAAI,EAAE,oDAAoD;gBAC1D,IAAI,EAAE,IAAI,CAAC,KAAK;aACnB;SAEJ,CAAC;IAKN,CAAC;IAJG,6BAAO,GAAP;QAEI,MAAM,CAAC,IAAI,CAAC,IAAI,CAAC;IACrB,CAAC;IACL,kBAAC;AAAD,CAAC,AArCD,IAqCC;AArCY,kCAAW"}
