@@ -13,7 +13,6 @@ var core_1 = require("@angular/core");
 var user_service_1 = require("../Service/user.service");
 var forms_1 = require("@angular/forms");
 var ng2_bs3_modal_1 = require("ng2-bs3-modal/ng2-bs3-modal");
-//import { IUser } from '../Model/user';
 var enum_1 = require("../Shared/enum");
 var global_1 = require("../Shared/global");
 var UserComponent = (function () {

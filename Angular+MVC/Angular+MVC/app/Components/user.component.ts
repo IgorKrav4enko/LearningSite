@@ -2,12 +2,10 @@
 import { UserService } from '../Service/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
-//import { IUser } from '../Model/user';
 import { DBOperation } from '../Shared/enum';
 import { Observable } from 'rxjs/Rx';
 import { Global } from '../Shared/global';
-import User = require("../Models/user");
-import IUser = User.IUser;
+import { IUser } from "../Models/user";
 
 @Component({
     templateUrl: 'app/Components/user.component.html'

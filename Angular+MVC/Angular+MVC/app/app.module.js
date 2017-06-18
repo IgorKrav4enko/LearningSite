@@ -17,6 +17,8 @@ var app_routing_1 = require("./app.routing");
 var home_component_1 = require("./components/home.component");
 var user_service_1 = require("./Service/user.service");
 var user_component_1 = require("./components/user.component");
+var lesson_cpmponent_1 = require("./Components/lesson.cpmponent");
+var lesson_service_1 = require("./Service/lesson.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,8 +27,8 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.ReactiveFormsModule, http_1.HttpModule, app_routing_1.routing, ng2_bs3_modal_1.Ng2Bs3ModalModule],
-        declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, user_component_1.UserComponent],
-        providers: [{ provide: common_1.APP_BASE_HREF, useValue: '/' }, user_service_1.UserService],
+        declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, user_component_1.UserComponent, lesson_cpmponent_1.LessonComponent],
+        providers: [{ provide: common_1.APP_BASE_HREF, useValue: '/' }, user_service_1.UserService, lesson_service_1.LessonService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
