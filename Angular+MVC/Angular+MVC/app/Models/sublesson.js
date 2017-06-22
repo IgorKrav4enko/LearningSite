@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var ISubLesson = (function () {
-    function ISubLesson() {
+var SubLesson = (function () {
+    function SubLesson() {
     }
-    return ISubLesson;
+    return SubLesson;
 }());
-exports.ISubLesson = ISubLesson;
+exports.SubLesson = SubLesson;
 //# sourceMappingURL=sublesson.js.map

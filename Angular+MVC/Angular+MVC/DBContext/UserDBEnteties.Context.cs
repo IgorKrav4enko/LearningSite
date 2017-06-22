@@ -26,5 +26,7 @@ namespace Angular_MVC.DBContext
         }
     
         public virtual DbSet<TblUser> TblUsers { get; set; }
+        public virtual DbSet<Lesson> Lessons { get; set; }
+        public virtual DbSet<SubLesson> SubLessons { get; set; }
     }
 }

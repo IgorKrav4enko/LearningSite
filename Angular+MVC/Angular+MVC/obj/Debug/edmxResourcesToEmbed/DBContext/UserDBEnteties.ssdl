@@ -1,5 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="UserDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Lesson">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="LessonName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SubLesson">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="SubLessonId" Type="int" />
+    <Property Name="SubLessonName" Type="nvarchar(max)" />
+    <Property Name="LessonId" Type="int" />
+  </EntityType>
   <EntityType Name="TblUser">
     <Key>
       <PropertyRef Name="Id" />
@@ -9,7 +25,25 @@
     <Property Name="LastName" Type="nvarchar" MaxLength="250" />
     <Property Name="Gender" Type="nvarchar" MaxLength="250" />
   </EntityType>
+  <Association Name="FK_SubLesson_ToLesson">
+    <End Role="Lesson" Type="Self.Lesson" Multiplicity="0..1" />
+    <End Role="SubLesson" Type="Self.SubLesson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lesson">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubLesson">
+        <PropertyRef Name="LessonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="UserDBModelStoreContainer">
+    <EntitySet Name="Lesson" EntityType="Self.Lesson" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubLesson" EntityType="Self.SubLesson" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblUser" EntityType="Self.TblUser" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_SubLesson_ToLesson" Association="Self.FK_SubLesson_ToLesson">
+      <End Role="Lesson" EntitySet="Lesson" />
+      <End Role="SubLesson" EntitySet="SubLesson" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

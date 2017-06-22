@@ -29,6 +29,8 @@ C:\LearningSite\Angular+MVC\Angular+MVC\bin\Angular+MVC.dll.config
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\Angular+MVC.dll
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\Angular+MVC.pdb
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\Antlr3.Runtime.dll
+C:\LearningSite\Angular+MVC\Angular+MVC\bin\EntityFramework.dll
+C:\LearningSite\Angular+MVC\Angular+MVC\bin\EntityFramework.SqlServer.dll
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\Microsoft.AI.Agent.Intercept.dll
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\Microsoft.AI.DependencyCollector.dll
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -50,6 +52,8 @@ C:\LearningSite\Angular+MVC\Angular+MVC\bin\System.Web.WebPages.Deployment.dll
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\System.Web.WebPages.dll
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\System.Web.WebPages.Razor.dll
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\WebGrease.dll
+C:\LearningSite\Angular+MVC\Angular+MVC\bin\EntityFramework.xml
+C:\LearningSite\Angular+MVC\Angular+MVC\bin\EntityFramework.SqlServer.xml
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\System.Web.Helpers.xml
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\System.Web.Mvc.xml
@@ -71,7 +75,3 @@ C:\LearningSite\Angular+MVC\Angular+MVC\bin\Microsoft.AI.Web.xml
 C:\LearningSite\Angular+MVC\Angular+MVC\obj\Debug\Angular+MVC.csprojResolveAssemblyReference.cache
 C:\LearningSite\Angular+MVC\Angular+MVC\obj\Debug\Angular+MVC.dll
 C:\LearningSite\Angular+MVC\Angular+MVC\obj\Debug\Angular+MVC.pdb
-C:\LearningSite\Angular+MVC\Angular+MVC\bin\EntityFramework.dll
-C:\LearningSite\Angular+MVC\Angular+MVC\bin\EntityFramework.SqlServer.dll
-C:\LearningSite\Angular+MVC\Angular+MVC\bin\EntityFramework.xml
-C:\LearningSite\Angular+MVC\Angular+MVC\bin\EntityFramework.SqlServer.xml

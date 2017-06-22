@@ -162,7 +162,14 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LessonController.cs" />
     <Compile Include="Controllers\UserAPIController.cs" />
+    <Compile Include="DBContext\Lesson.cs">
+      <DependentUpon>UserDBEnteties.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\SubLesson.cs">
+      <DependentUpon>UserDBEnteties.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBContext\TblUser.cs">
       <DependentUpon>UserDBEnteties.tt</DependentUpon>
     </Compile>

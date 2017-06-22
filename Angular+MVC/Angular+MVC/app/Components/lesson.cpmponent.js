@@ -22,8 +22,8 @@ var LessonComponent = (function () {
 }());
 LessonComponent = __decorate([
     core_1.Component({
-        selector: 'my-lesson',
-        templateUrl: 'app/Components/lesson.component.html',
+        //selector: 'my-lesson',
+        templateUrl: 'app/Components/lesson.component.html'
     }),
     __metadata("design:paramtypes", [lesson_service_1.LessonService])
 ], LessonComponent);

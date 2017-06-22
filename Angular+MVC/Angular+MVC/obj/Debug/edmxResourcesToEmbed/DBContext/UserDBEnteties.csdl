@@ -11,5 +11,41 @@
   </EntityType>
   <EntityContainer Name="UserDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="TblUsers" EntityType="Self.TblUser" />
+    <EntitySet Name="Lessons" EntityType="UserDBModel.Lesson" />
+    <EntitySet Name="SubLessons" EntityType="UserDBModel.SubLesson" />
+    <AssociationSet Name="FK_SubLesson_ToLesson" Association="UserDBModel.FK_SubLesson_ToLesson">
+      <End Role="Lesson" EntitySet="Lessons" />
+      <End Role="SubLesson" EntitySet="SubLessons" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Lesson">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="LessonName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SubLessons" Relationship="UserDBModel.FK_SubLesson_ToLesson" FromRole="Lesson" ToRole="SubLesson" />
+  </EntityType>
+  <EntityType Name="SubLesson">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="SubLessonId" Type="Int32" />
+    <Property Name="SubLessonName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LessonId" Type="Int32" />
+    <NavigationProperty Name="Lesson" Relationship="UserDBModel.FK_SubLesson_ToLesson" FromRole="SubLesson" ToRole="Lesson" />
+  </EntityType>
+  <Association Name="FK_SubLesson_ToLesson">
+    <End Type="UserDBModel.Lesson" Role="Lesson" Multiplicity="0..1" />
+    <End Type="UserDBModel.SubLesson" Role="SubLesson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lesson">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubLesson">
+        <PropertyRef Name="LessonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
