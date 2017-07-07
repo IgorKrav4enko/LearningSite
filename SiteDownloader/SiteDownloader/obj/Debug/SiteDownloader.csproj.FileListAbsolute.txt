@@ -1,0 +1,11 @@
+C:\LearningSite\SiteDownloader\SiteDownloader\obj\Debug\SiteDownloader.csprojResolveAssemblyReference.cache
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\SiteDownloader.exe.config
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\SiteDownloader.exe
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\SiteDownloader.pdb
+C:\LearningSite\SiteDownloader\SiteDownloader\obj\Debug\SiteDownloader.exe
+C:\LearningSite\SiteDownloader\SiteDownloader\obj\Debug\SiteDownloader.pdb
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\HtmlAgilityPack.dll
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\HtmlAgilityPack.pdb
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\HtmlAgilityPack.xml
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\WebDriver.dll
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\WebDriver.xml
