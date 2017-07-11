@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d43db6f949dc4f09aec852081a762a04" Name="Diagram1">
+        <EntityTypeShape EntityType="SiteModel.Cour" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiteModel.Lesson" Width="1.5" PointX="7.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiteModel.ParentLesson" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiteModel.Site" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiteModel.SubLesson" Width="1.5" PointX="9.75" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="SiteModel.FK_Cours_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="SiteModel.FK_ParentLesson_Cours" ManuallyRouted="false" />
+        <AssociationConnector Association="SiteModel.FK_Lesson_ParentLesson" ManuallyRouted="false" />
+        <AssociationConnector Association="SiteModel.FK_SubLesson_Lesson" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

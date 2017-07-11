@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SiteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cour">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SiteId" Type="Int32" />
+    <NavigationProperty Name="Site" Relationship="Self.FK_Cours_Department" FromRole="Cours" ToRole="Site" />
+    <NavigationProperty Name="ParentLessons" Relationship="Self.FK_ParentLesson_Cours" FromRole="Cours" ToRole="ParentLesson" />
+  </EntityType>
+  <EntityType Name="Lesson">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParentLessonId" Type="Int32" />
+    <NavigationProperty Name="ParentLesson" Relationship="Self.FK_Lesson_ParentLesson" FromRole="Lesson" ToRole="ParentLesson" />
+    <NavigationProperty Name="SubLessons" Relationship="Self.FK_SubLesson_Lesson" FromRole="Lesson" ToRole="SubLesson" />
+  </EntityType>
+  <EntityType Name="ParentLesson">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CourceId" Type="Int32" />
+    <NavigationProperty Name="Cour" Relationship="Self.FK_ParentLesson_Cours" FromRole="ParentLesson" ToRole="Cours" />
+    <NavigationProperty Name="Lessons" Relationship="Self.FK_Lesson_ParentLesson" FromRole="ParentLesson" ToRole="Lesson" />
+  </EntityType>
+  <EntityType Name="Site">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="SiteName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cours" Relationship="Self.FK_Cours_Department" FromRole="Site" ToRole="Cours" />
+  </EntityType>
+  <EntityType Name="SubLesson">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LessonId" Type="Int32" />
+    <NavigationProperty Name="Lesson" Relationship="Self.FK_SubLesson_Lesson" FromRole="SubLesson" ToRole="Lesson" />
+  </EntityType>
+  <Association Name="FK_Cours_Department">
+    <End Role="Site" Type="Self.Site" Multiplicity="0..1" />
+    <End Role="Cours" Type="Self.Cour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cours">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParentLesson_Cours">
+    <End Role="Cours" Type="Self.Cour" Multiplicity="0..1" />
+    <End Role="ParentLesson" Type="Self.ParentLesson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cours">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ParentLesson">
+        <PropertyRef Name="CourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lesson_ParentLesson">
+    <End Role="ParentLesson" Type="Self.ParentLesson" Multiplicity="0..1" />
+    <End Role="Lesson" Type="Self.Lesson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ParentLesson">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lesson">
+        <PropertyRef Name="ParentLessonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubLesson_Lesson">
+    <End Role="Lesson" Type="Self.Lesson" Multiplicity="0..1" />
+    <End Role="SubLesson" Type="Self.SubLesson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lesson">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubLesson">
+        <PropertyRef Name="LessonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SiteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cours" EntityType="Self.Cour" />
+    <EntitySet Name="Lessons" EntityType="Self.Lesson" />
+    <EntitySet Name="ParentLessons" EntityType="Self.ParentLesson" />
+    <EntitySet Name="Sites" EntityType="Self.Site" />
+    <EntitySet Name="SubLessons" EntityType="Self.SubLesson" />
+    <AssociationSet Name="FK_Cours_Department" Association="Self.FK_Cours_Department">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Cours" EntitySet="Cours" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParentLesson_Cours" Association="Self.FK_ParentLesson_Cours">
+      <End Role="Cours" EntitySet="Cours" />
+      <End Role="ParentLesson" EntitySet="ParentLessons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lesson_ParentLesson" Association="Self.FK_Lesson_ParentLesson">
+      <End Role="ParentLesson" EntitySet="ParentLessons" />
+      <End Role="Lesson" EntitySet="Lessons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubLesson_Lesson" Association="Self.FK_SubLesson_Lesson">
+      <End Role="Lesson" EntitySet="Lessons" />
+      <End Role="SubLesson" EntitySet="SubLessons" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

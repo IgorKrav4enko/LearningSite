@@ -9,3 +9,9 @@ C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\HtmlAgilityPack.pdb
 C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\HtmlAgilityPack.xml
 C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\WebDriver.dll
 C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\WebDriver.xml
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\DB\Site.mdf
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\DB\Site_log.ldf
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\EntityFramework.dll
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\EntityFramework.SqlServer.dll
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\EntityFramework.xml
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\EntityFramework.SqlServer.xml

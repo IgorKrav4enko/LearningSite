@@ -10,32 +10,41 @@ using System.Threading.Tasks;
 using HtmlAgilityPack;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SiteDownloader.DBContext;
 
 namespace SiteDownloader
 {
     class Program
     {
+
+        private static SiteEntities DB = new SiteEntities();
         public static void Main(string[] args)
         {
-            ArraySort();
+            //ArraySort();
+            OpenBrowser();
         }
 
         public static void OpenBrowser()
         {
-            IWebDriver driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("https://metanit.com/web/angular2/1.1.php");
-            var links = driver.FindElements(By.CssSelector("#browser > li > ul > li > span > a"));
-            foreach (var link in links)
-            {
-                link.Click();
-            }
-            links[0].Click();
 
-            driver.Navigate().GoToUrl("https://metanit.com/web/angular2/2.9.php");
-            var codeList = driver.FindElements(By.CssSelector("td.code"));
-            var codeStrings = codeList.Select(x => x.Text).ToList();
-            var s = driver.Title;
-            driver.Close();
+            DB.Sites.Add(new Site() { SiteName = "Angular 2" });
+            DB.SaveChanges();
+            //IWebDriver driver = new ChromeDriver();
+            //driver.Navigate().GoToUrl("https://metanit.com/web/angular2/1.1.php");
+            //var links = driver.FindElements(By.CssSelector("#browser > li > ul > li > span > a"));
+            //var hrefs =links.Select(l => l.GetAttribute("href")).ToList();
+            //foreach (var href in hrefs)
+            //{
+               
+            //    driver.Navigate().GoToUrl(href);
+            //}
+            //links[0].Click();
+
+            //driver.Navigate().GoToUrl("https://metanit.com/web/angular2/2.9.php");
+            //var codeList = driver.FindElements(By.CssSelector("td.code"));
+            //var codeStrings = codeList.Select(x => x.Text).ToList();
+            //var s = driver.Title;
+            //driver.Close();
         }
 
         public static void ArraySort()
