@@ -11,31 +11,38 @@ using HtmlAgilityPack;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SiteDownloader.DBContext;
+using SiteDownloader.DBOperations;
 
 namespace SiteDownloader
 {
     class Program
     {
 
-        private static SiteEntities DB = new SiteEntities();
+
         public static void Main(string[] args)
         {
             //ArraySort();
             OpenBrowser();
+            Console.Read();
         }
 
         public static void OpenBrowser()
         {
+            CRUD operations = new CRUD();
+            Site site = new Site() { SiteName = "Angular" };
+            //operations.AddSite(site);
+            operations.CreateContent();
 
-            DB.Sites.Add(new Site() { SiteName = "Angular 2" });
-            DB.SaveChanges();
+            //DB.Sites.Add(new Site() { SiteName = "Angular 2" });
+            //DB.SaveChanges();
+
             //IWebDriver driver = new ChromeDriver();
             //driver.Navigate().GoToUrl("https://metanit.com/web/angular2/1.1.php");
             //var links = driver.FindElements(By.CssSelector("#browser > li > ul > li > span > a"));
             //var hrefs =links.Select(l => l.GetAttribute("href")).ToList();
             //foreach (var href in hrefs)
             //{
-               
+
             //    driver.Navigate().GoToUrl(href);
             //}
             //links[0].Click();
@@ -49,7 +56,7 @@ namespace SiteDownloader
 
         public static void ArraySort()
         {
-            var distinctArray = new[]{1};
+            var distinctArray = new[] { 1 };
 
             for (int i = 0; i < distinctArray.Length; i++)
             {
@@ -113,6 +120,7 @@ namespace SiteDownloader
 
             return distinctArray;
         }
+
 
     }
 }
