@@ -1,5 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="UserDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="UserDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Courses" EntityType="UserDBModel.Course" />
+    <EntitySet Name="Lessons" EntityType="UserDBModel.Lesson" />
+    <EntitySet Name="Sites" EntityType="UserDBModel.Site" />
+    <EntitySet Name="SubLessons" EntityType="UserDBModel.SubLesson" />
+    <EntitySet Name="TblUsers" EntityType="UserDBModel.TblUser" />
+    <AssociationSet Name="FK_Cours_Department" Association="UserDBModel.FK_Cours_Department">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Course" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lesson_Cource" Association="UserDBModel.FK_Lesson_Cource">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="Lesson" EntitySet="Lessons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubLesson_Lesson" Association="UserDBModel.FK_SubLesson_Lesson">
+      <End Role="Lesson" EntitySet="Lessons" />
+      <End Role="SubLesson" EntitySet="SubLessons" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SiteId" Type="Int32" />
+    <NavigationProperty Name="Site" Relationship="UserDBModel.FK_Cours_Department" FromRole="Course" ToRole="Site" />
+    <NavigationProperty Name="Lessons" Relationship="UserDBModel.FK_Lesson_Cource" FromRole="Course" ToRole="Lesson" />
+  </EntityType>
+  <EntityType Name="Lesson">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CourseId" Type="Int32" />
+    <NavigationProperty Name="Course" Relationship="UserDBModel.FK_Lesson_Cource" FromRole="Lesson" ToRole="Course" />
+    <NavigationProperty Name="SubLessons" Relationship="UserDBModel.FK_SubLesson_Lesson" FromRole="Lesson" ToRole="SubLesson" />
+  </EntityType>
+  <EntityType Name="Site">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Courses" Relationship="UserDBModel.FK_Cours_Department" FromRole="Site" ToRole="Course" />
+  </EntityType>
+  <EntityType Name="SubLesson">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LessonId" Type="Int32" />
+    <NavigationProperty Name="Lesson" Relationship="UserDBModel.FK_SubLesson_Lesson" FromRole="SubLesson" ToRole="Lesson" />
+  </EntityType>
   <EntityType Name="TblUser">
     <Key>
       <PropertyRef Name="Id" />
@@ -9,34 +66,31 @@
     <Property Name="LastName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="Gender" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityContainer Name="UserDBEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="TblUsers" EntityType="Self.TblUser" />
-    <EntitySet Name="Lessons" EntityType="UserDBModel.Lesson" />
-    <EntitySet Name="SubLessons" EntityType="UserDBModel.SubLesson" />
-    <AssociationSet Name="FK_SubLesson_ToLesson" Association="UserDBModel.FK_SubLesson_ToLesson">
-      <End Role="Lesson" EntitySet="Lessons" />
-      <End Role="SubLesson" EntitySet="SubLessons" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="Lesson">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="LessonName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="SubLessons" Relationship="UserDBModel.FK_SubLesson_ToLesson" FromRole="Lesson" ToRole="SubLesson" />
-  </EntityType>
-  <EntityType Name="SubLesson">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="SubLessonId" Type="Int32" />
-    <Property Name="SubLessonName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="LessonId" Type="Int32" />
-    <NavigationProperty Name="Lesson" Relationship="UserDBModel.FK_SubLesson_ToLesson" FromRole="SubLesson" ToRole="Lesson" />
-  </EntityType>
-  <Association Name="FK_SubLesson_ToLesson">
+  <Association Name="FK_Cours_Department">
+    <End Type="UserDBModel.Site" Role="Site" Multiplicity="0..1" />
+    <End Type="UserDBModel.Course" Role="Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lesson_Cource">
+    <End Type="UserDBModel.Course" Role="Course" Multiplicity="0..1" />
+    <End Type="UserDBModel.Lesson" Role="Lesson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lesson">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubLesson_Lesson">
     <End Type="UserDBModel.Lesson" Role="Lesson" Multiplicity="0..1" />
     <End Type="UserDBModel.SubLesson" Role="SubLesson" Multiplicity="*" />
     <ReferentialConstraint>

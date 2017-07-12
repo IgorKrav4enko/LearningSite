@@ -13,23 +13,23 @@ namespace Angular_MVC.Controllers
     {
         public HttpResponseMessage Get()
         {
-            return ToJson(UserDB.TblUsers.AsEnumerable());
+            return ToJson(UserDB.Users.AsEnumerable());
         }
 
-        public HttpResponseMessage Post([FromBody]TblUser value)
+        public HttpResponseMessage Post([FromBody]User value)
         {
-            UserDB.TblUsers.Add(value);
+            UserDB.Users.Add(value);
             return ToJson(UserDB.SaveChanges());
         }
 
-        public HttpResponseMessage Put(int id, [FromBody]TblUser value)
+        public HttpResponseMessage Put(int id, [FromBody]User value)
         {
             UserDB.Entry(value).State = EntityState.Modified;
             return ToJson(UserDB.SaveChanges());
         }
         public HttpResponseMessage Delete(int id)
         {
-            UserDB.TblUsers.Remove(UserDB.TblUsers.FirstOrDefault(x => x.Id == id));
+            UserDB.Users.Remove(UserDB.Users.FirstOrDefault(x => x.Id == id));
             return ToJson(UserDB.SaveChanges());
         }
     }

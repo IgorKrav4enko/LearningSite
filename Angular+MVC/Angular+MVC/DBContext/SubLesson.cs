@@ -15,8 +15,8 @@ namespace Angular_MVC.DBContext
     public partial class SubLesson
     {
         public int Id { get; set; }
-        public Nullable<int> SubLessonId { get; set; }
-        public string SubLessonName { get; set; }
+        public string Name { get; set; }
+        public string Content { get; set; }
         public Nullable<int> LessonId { get; set; }
     
         public virtual Lesson Lesson { get; set; }

@@ -12,7 +12,7 @@ namespace Angular_MVC.Controllers
 
         public HttpResponseMessage Get()
         {
-            return ToJson(UserDB.TblUsers.AsEnumerable());
+            return ToJson(UserDB.Users.AsEnumerable());
         }
     }
 }

@@ -164,29 +164,35 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LessonController.cs" />
     <Compile Include="Controllers\UserAPIController.cs" />
+    <Compile Include="DBContext\Course.cs">
+      <DependentUpon>LearningSiteDBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\LearningSiteDBEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LearningSiteDBEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\LearningSiteDBEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LearningSiteDBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\LearningSiteDBEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LearningSiteDBEntity.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DBContext\Lesson.cs">
-      <DependentUpon>UserDBEnteties.tt</DependentUpon>
+      <DependentUpon>LearningSiteDBEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\Site.cs">
+      <DependentUpon>LearningSiteDBEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="DBContext\SubLesson.cs">
-      <DependentUpon>UserDBEnteties.tt</DependentUpon>
+      <DependentUpon>LearningSiteDBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBContext\TblUser.cs">
-      <DependentUpon>UserDBEnteties.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBContext\UserDBEnteties.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDBEnteties.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBContext\UserDBEnteties.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDBEnteties.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBContext\UserDBEnteties.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDBEnteties.edmx</DependentUpon>
+    <Compile Include="DBContext\User.cs">
+      <DependentUpon>LearningSiteDBEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -196,21 +202,25 @@
   <ItemGroup>
     <Content Include="app\Components\lesson.component.html" />
     <Content Include="app\Components\user.component.html" />
+    <Content Include="App_Data\LearningSite.mdf" />
+    <Content Include="App_Data\LearningSite_log.ldf">
+      <DependentUpon>LearningSite.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\UserDB.mdf" />
     <Content Include="App_Data\UserDB_log.ldf">
       <DependentUpon>UserDB.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="DBContext\UserDBEnteties.Context.tt">
+    <Content Include="DBContext\LearningSiteDBEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UserDBEnteties.Context.cs</LastGenOutput>
-      <DependentUpon>UserDBEnteties.edmx</DependentUpon>
+      <DependentUpon>LearningSiteDBEntity.edmx</DependentUpon>
+      <LastGenOutput>LearningSiteDBEntity.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DBContext\UserDBEnteties.tt">
+    <Content Include="DBContext\LearningSiteDBEntity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserDBEnteties.edmx</DependentUpon>
-      <LastGenOutput>UserDBEnteties.cs</LastGenOutput>
+      <DependentUpon>LearningSiteDBEntity.edmx</DependentUpon>
+      <LastGenOutput>LearningSiteDBEntity.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -222,12 +232,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="package.json" />
-    <EntityDeploy Include="DBContext\UserDBEnteties.edmx">
+    <EntityDeploy Include="DBContext\LearningSiteDBEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserDBEnteties.Designer.cs</LastGenOutput>
+      <LastGenOutput>LearningSiteDBEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="DBContext\UserDBEnteties.edmx.diagram">
-      <DependentUpon>UserDBEnteties.edmx</DependentUpon>
+    <Content Include="DBContext\LearningSiteDBEntity.edmx.diagram">
+      <DependentUpon>LearningSiteDBEntity.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

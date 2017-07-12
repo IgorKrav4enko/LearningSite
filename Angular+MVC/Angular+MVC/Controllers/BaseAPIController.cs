@@ -12,7 +12,7 @@ namespace Angular_MVC.Controllers
 {
     public class BaseAPIController : ApiController
     {
-        protected readonly UserDBEntities UserDB = new UserDBEntities();
+        protected readonly LearningSiteEntities UserDB = new LearningSiteEntities();
         protected HttpResponseMessage ToJson(dynamic obj)
         {
             var response = Request.CreateResponse(HttpStatusCode.OK);
