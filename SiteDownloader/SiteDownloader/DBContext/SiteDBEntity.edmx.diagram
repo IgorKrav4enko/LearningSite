@@ -5,15 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="4794ad18da8949e58a2d373d13154922" Name="Diagram1">
-        <EntityTypeShape EntityType="AngularModel.Cour" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AngularModel.Lesson" Width="1.5" PointX="7.5" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AngularModel.ParentLesson" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AngularModel.Site" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AngularModel.SubLesson" Width="1.5" PointX="9.75" PointY="0.875" IsExpanded="true" />
-        <AssociationConnector Association="AngularModel.FK_Cours_Department" ManuallyRouted="false" />
-        <AssociationConnector Association="AngularModel.FK_ParentLesson_Cours" ManuallyRouted="false" />
-        <AssociationConnector Association="AngularModel.FK_Lesson_ParentLesson" ManuallyRouted="false" />
-        <AssociationConnector Association="AngularModel.FK_SubLesson_Lesson" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AngularModel.Cour" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="AngularModel.Lesson" Width="1.5" PointX="5.25" PointY="0.875" />
+        <EntityTypeShape EntityType="AngularModel.Site" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="AngularModel.SubLesson" Width="1.5" PointX="7.5" PointY="0.875" />
+        <AssociationConnector Association="AngularModel.FK_Cours_Department" />
+        <AssociationConnector Association="AngularModel.FK_Lesson_Cource" />
+        <AssociationConnector Association="AngularModel.FK_SubLesson_Lesson" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -14,15 +14,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
-    <Property Name="ParentLessonId" Type="int" />
-  </EntityType>
-  <EntityType Name="ParentLesson">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" />
-    <Property Name="CourceId" Type="int" />
+    <Property Name="CoursId" Type="int" />
   </EntityType>
   <EntityType Name="Site">
     <Key>
@@ -52,27 +44,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Lesson_ParentLesson">
-    <End Role="ParentLesson" Type="Self.ParentLesson" Multiplicity="0..1" />
-    <End Role="Lesson" Type="Self.Lesson" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ParentLesson">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Lesson">
-        <PropertyRef Name="ParentLessonId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ParentLesson_Cours">
+  <Association Name="FK_Lesson_Cource">
     <End Role="Cours" Type="Self.Cours" Multiplicity="0..1" />
-    <End Role="ParentLesson" Type="Self.ParentLesson" Multiplicity="*" />
+    <End Role="Lesson" Type="Self.Lesson" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cours">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="ParentLesson">
-        <PropertyRef Name="CourceId" />
+      <Dependent Role="Lesson">
+        <PropertyRef Name="CoursId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -91,20 +71,15 @@
   <EntityContainer Name="AngularModelStoreContainer">
     <EntitySet Name="Cours" EntityType="Self.Cours" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Lesson" EntityType="Self.Lesson" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ParentLesson" EntityType="Self.ParentLesson" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Site" EntityType="Self.Site" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SubLesson" EntityType="Self.SubLesson" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Cours_Department" Association="Self.FK_Cours_Department">
       <End Role="Site" EntitySet="Site" />
       <End Role="Cours" EntitySet="Cours" />
     </AssociationSet>
-    <AssociationSet Name="FK_Lesson_ParentLesson" Association="Self.FK_Lesson_ParentLesson">
-      <End Role="ParentLesson" EntitySet="ParentLesson" />
-      <End Role="Lesson" EntitySet="Lesson" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ParentLesson_Cours" Association="Self.FK_ParentLesson_Cours">
+    <AssociationSet Name="FK_Lesson_Cource" Association="Self.FK_Lesson_Cource">
       <End Role="Cours" EntitySet="Cours" />
-      <End Role="ParentLesson" EntitySet="ParentLesson" />
+      <End Role="Lesson" EntitySet="Lesson" />
     </AssociationSet>
     <AssociationSet Name="FK_SubLesson_Lesson" Association="Self.FK_SubLesson_Lesson">
       <End Role="Lesson" EntitySet="Lesson" />

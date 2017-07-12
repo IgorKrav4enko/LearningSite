@@ -17,7 +17,7 @@ namespace SiteDownloader.DBContext
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Cour()
         {
-            this.ParentLessons = new HashSet<ParentLesson>();
+            this.Lessons = new HashSet<Lesson>();
         }
     
         public int Id { get; set; }
@@ -26,6 +26,6 @@ namespace SiteDownloader.DBContext
     
         public virtual Site Site { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ParentLesson> ParentLessons { get; set; }
+        public virtual ICollection<Lesson> Lessons { get; set; }
     }
 }

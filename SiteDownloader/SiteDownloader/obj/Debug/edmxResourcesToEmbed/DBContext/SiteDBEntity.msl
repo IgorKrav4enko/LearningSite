@@ -4,45 +4,36 @@
     <EntitySetMapping Name="Cours">
       <EntityTypeMapping TypeName="AngularModel.Cour">
         <MappingFragment StoreEntitySet="Cours">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
           <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Lessons">
       <EntityTypeMapping TypeName="AngularModel.Lesson">
         <MappingFragment StoreEntitySet="Lesson">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CoursId" ColumnName="CoursId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="ParentLessonId" ColumnName="ParentLessonId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ParentLessons">
-      <EntityTypeMapping TypeName="AngularModel.ParentLesson">
-        <MappingFragment StoreEntitySet="ParentLesson">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="CourceId" ColumnName="CourceId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Sites">
       <EntityTypeMapping TypeName="AngularModel.Site">
         <MappingFragment StoreEntitySet="Site">
-          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="SubLessons">
       <EntityTypeMapping TypeName="AngularModel.SubLesson">
         <MappingFragment StoreEntitySet="SubLesson">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Content" ColumnName="Content" />
           <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

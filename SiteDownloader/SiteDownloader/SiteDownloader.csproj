@@ -82,9 +82,6 @@
     <Compile Include="DBContext\Lesson.cs">
       <DependentUpon>SiteDBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBContext\ParentLesson.cs">
-      <DependentUpon>SiteDBEntity.tt</DependentUpon>
-    </Compile>
     <Compile Include="DBContext\Site.cs">
       <DependentUpon>SiteDBEntity.tt</DependentUpon>
     </Compile>

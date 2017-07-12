@@ -27,7 +27,6 @@ namespace SiteDownloader.DBContext
     
         public virtual DbSet<Cour> Cours { get; set; }
         public virtual DbSet<Lesson> Lessons { get; set; }
-        public virtual DbSet<ParentLesson> ParentLessons { get; set; }
         public virtual DbSet<Site> Sites { get; set; }
         public virtual DbSet<SubLesson> SubLessons { get; set; }
     }
