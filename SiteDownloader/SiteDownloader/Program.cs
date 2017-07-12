@@ -17,21 +17,27 @@ namespace SiteDownloader
 {
     class Program
     {
-
+        private static AngularEntities DB = new AngularEntities();
 
         public static void Main(string[] args)
         {
             //ArraySort();
-            OpenBrowser();
+            //OpenBrowser();
+
+            Cour angular = new Cour() { CourseName = "Руководство по Angular", SiteId = DB.Sites.FirstOrDefault(x=>x.SiteName== "Angular 2").Id };
+            DB.Cours.Add(angular);
+            DB.SaveChanges();
             Console.Read();
         }
 
         public static void OpenBrowser()
         {
-            CRUD operations = new CRUD();
+            // CRUD operations = new CRUD();
+            ContentLoader loader = new ContentLoader();
+            loader.GetMetanitContent();
             Site site = new Site() { SiteName = "Angular" };
             //operations.AddSite(site);
-            operations.CreateContent();
+            //operations.CreateContent();
 
             //DB.Sites.Add(new Site() { SiteName = "Angular 2" });
             //DB.SaveChanges();
