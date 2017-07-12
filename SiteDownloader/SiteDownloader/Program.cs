@@ -22,11 +22,9 @@ namespace SiteDownloader
         public static void Main(string[] args)
         {
             //ArraySort();
-            //OpenBrowser();
+            OpenBrowser();
 
-            Cour angular = new Cour() { CourseName = "Руководство по Angular", SiteId = DB.Sites.FirstOrDefault(x=>x.SiteName== "Angular 2").Id };
-            DB.Cours.Add(angular);
-            DB.SaveChanges();
+           
             Console.Read();
         }
 
