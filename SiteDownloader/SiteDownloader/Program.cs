@@ -125,12 +125,13 @@ namespace SiteDownloader
         private string a20 = "XX";
         private string a38 = "XXXVIII";
 
-        public static string RomeConverter(string rome = "XIII")
+        public static string RomeConverter(string rome = "XVIII")
         {
-            //if (!(rome.Contains("X") || rome.Contains("V") || rome.Contains("I")))
-            //{
-            //    throw new ArgumentException();
-            //}
+            if (rome.Except(new char[] { 'X', 'V', 'I' }).Any())
+            {
+                throw new ArgumentException();
+            }
+
             if (!(rome.Contains("X") || rome.Contains("V")))
             {
                 return rome.Length.ToString();
