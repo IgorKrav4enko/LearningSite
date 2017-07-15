@@ -3,10 +3,10 @@ C:\LearningSite\Angular+MVC\SiteDownloader\bin\Debug\SiteDownloader.exe
 C:\LearningSite\Angular+MVC\SiteDownloader\bin\Debug\SiteDownloader.pdb
 C:\LearningSite\Angular+MVC\SiteDownloader\bin\Debug\EntityFramework.dll
 C:\LearningSite\Angular+MVC\SiteDownloader\bin\Debug\EntityFramework.SqlServer.dll
+C:\LearningSite\Angular+MVC\SiteDownloader\bin\Debug\WebDriver.dll
 C:\LearningSite\Angular+MVC\SiteDownloader\bin\Debug\EntityFramework.xml
 C:\LearningSite\Angular+MVC\SiteDownloader\bin\Debug\EntityFramework.SqlServer.xml
+C:\LearningSite\Angular+MVC\SiteDownloader\bin\Debug\WebDriver.xml
 C:\LearningSite\Angular+MVC\SiteDownloader\obj\Debug\SiteDownloader.csprojResolveAssemblyReference.cache
 C:\LearningSite\Angular+MVC\SiteDownloader\obj\Debug\SiteDownloader.exe
 C:\LearningSite\Angular+MVC\SiteDownloader\obj\Debug\SiteDownloader.pdb
-C:\LearningSite\Angular+MVC\SiteDownloader\bin\Debug\WebDriver.dll
-C:\LearningSite\Angular+MVC\SiteDownloader\bin\Debug\WebDriver.xml

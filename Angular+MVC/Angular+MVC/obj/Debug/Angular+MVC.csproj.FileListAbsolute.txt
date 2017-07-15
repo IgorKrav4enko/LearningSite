@@ -72,6 +72,6 @@ C:\LearningSite\Angular+MVC\Angular+MVC\bin\Microsoft.AI.DependencyCollector.xml
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\Microsoft.AI.WindowsServer.xml
 C:\LearningSite\Angular+MVC\Angular+MVC\bin\Microsoft.AI.Web.xml
-C:\LearningSite\Angular+MVC\Angular+MVC\obj\Debug\Angular+MVC.csprojResolveAssemblyReference.cache
 C:\LearningSite\Angular+MVC\Angular+MVC\obj\Debug\Angular+MVC.dll
 C:\LearningSite\Angular+MVC\Angular+MVC\obj\Debug\Angular+MVC.pdb
+C:\LearningSite\Angular+MVC\Angular+MVC\obj\Debug\Angular+MVC.csprojResolveAssemblyReference.cache

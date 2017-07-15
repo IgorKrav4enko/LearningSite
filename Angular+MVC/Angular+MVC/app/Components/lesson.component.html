@@ -1,15 +1,14 @@
 ﻿<div class='panel panel-primary'>
     <div class='panel-heading'>
-            {{lesson.lessonName}}
-        </div>
-<div class='panel-body'>
-    <div class='table-responsive'>
-        <div class='h2 text-center'>
-            {{lesson.sublessonName}}
-        </div>
-        <div class='text-primary text-info'>
-            {{lesson.content}}
+       
+    </div>
+    <div class='panel-body'>
+        <div class='table-responsive'>
+            <ul>
+                <li *ngFor="let lesson of lessons">
+                    {{lesson.Name}}
+                </li>
+            </ul>
         </div>
     </div>
-</div>
 </div>

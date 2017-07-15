@@ -298,7 +298,7 @@
     <TypeScriptCompile Include="app\Components\lesson.cpmponent.ts" />
     <TypeScriptCompile Include="app\Components\user.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
-    <TypeScriptCompile Include="app\Models\sublesson.ts" />
+    <TypeScriptCompile Include="app\Models\lesson.ts" />
     <TypeScriptCompile Include="app\Models\user.ts" />
     <TypeScriptCompile Include="app\Service\lesson.service.ts" />
     <TypeScriptCompile Include="app\Service\user.service.ts" />

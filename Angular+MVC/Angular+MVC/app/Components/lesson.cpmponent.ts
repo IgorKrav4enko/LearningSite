@@ -1,18 +1,26 @@
 ﻿import { Component, OnInit } from "@angular/core";
 import { LessonService } from "../Service/lesson.service";
-import { SubLesson as ISubLesson } from "../Models/sublesson";
+import { ILesson } from "../Models/lesson";
+import { Global } from '../Shared/global';
 
 @Component({
     //selector: 'my-lesson',
     templateUrl: 'app/Components/lesson.component.html'
 })
 export class LessonComponent implements OnInit {
-    lesson: ISubLesson;
+    lessons: ILesson[];
+    msg: string;
 
     ngOnInit(): void {
-        this.lesson = this.servise.getLesson();
+        this.loadLessons();
     }
-    constructor(private servise: LessonService) { }
 
+    constructor(private _lessonServise: LessonService) {}
 
+    private loadLessons(): void {
+        this._lessonServise.get(Global.BASE_LESSON_ENDPOINT)
+            .subscribe(lessons => { this.lessons = lessons; },
+                error => this.msg = <any>error);
+    }
 }
+

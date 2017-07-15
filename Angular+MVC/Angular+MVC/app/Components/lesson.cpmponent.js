@@ -11,12 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var lesson_service_1 = require("../Service/lesson.service");
+var global_1 = require("../Shared/global");
 var LessonComponent = (function () {
-    function LessonComponent(servise) {
-        this.servise = servise;
+    function LessonComponent(_lessonServise) {
+        this._lessonServise = _lessonServise;
     }
     LessonComponent.prototype.ngOnInit = function () {
-        this.lesson = this.servise.getLesson();
+        this.loadLessons();
+    };
+    LessonComponent.prototype.loadLessons = function () {
+        var _this = this;
+        this._lessonServise.get(global_1.Global.BASE_LESSON_ENDPOINT)
+            .subscribe(function (lessons) { _this.lessons = lessons; }, function (error) { return _this.msg = error; });
     };
     return LessonComponent;
 }());

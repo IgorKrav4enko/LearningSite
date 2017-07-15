@@ -18,6 +18,7 @@ namespace Angular_MVC.DBContext
         public LearningSiteEntities()
             : base("name=LearningSiteEntities")
         {
+            Configuration.ProxyCreationEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
