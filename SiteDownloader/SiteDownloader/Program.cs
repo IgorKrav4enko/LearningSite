@@ -1,75 +1,52 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
-using SiteDownloader.DBContext;
-using SiteDownloader.DBOperations;
 
 namespace SiteDownloader
 {
     class Program
     {
-        private static AngularEntities DB = new AngularEntities();
+        private static readonly int[] MyArray = new int[40];
+        private static readonly Random random = new Random();
 
         public static void Main(string[] args)
         {
-            //ArraySort();
-            OpenBrowser();
+            //ArrayWithHyphen();
+            //Console.WriteLine(RomeConverter("III"));
 
-           
             Console.Read();
         }
 
-        public static void OpenBrowser()
+        #region ArrayWithHyphen
+
+        //1. Есть массив отсортированных чисел.Надо вывести их в строку через запятую. 
+        //Но, если есть несколько чисел подряд - то выводим только первое и последнее из них через дефис
+        public static void ArrayWithHyphen()
         {
-            // CRUD operations = new CRUD();
-            ContentLoader loader = new ContentLoader();
-            loader.GetMetanitContent();
-            Site site = new Site() { SiteName = "Angular" };
-            //operations.AddSite(site);
-            //operations.CreateContent();
-
-            //DB.Sites.Add(new Site() { SiteName = "Angular 2" });
-            //DB.SaveChanges();
-
-            //IWebDriver driver = new ChromeDriver();
-            //driver.Navigate().GoToUrl("https://metanit.com/web/angular2/1.1.php");
-            //var links = driver.FindElements(By.CssSelector("#browser > li > ul > li > span > a"));
-            //var hrefs =links.Select(l => l.GetAttribute("href")).ToList();
-            //foreach (var href in hrefs)
-            //{
-
-            //    driver.Navigate().GoToUrl(href);
-            //}
-            //links[0].Click();
-
-            //driver.Navigate().GoToUrl("https://metanit.com/web/angular2/2.9.php");
-            //var codeList = driver.FindElements(By.CssSelector("td.code"));
-            //var codeStrings = codeList.Select(x => x.Text).ToList();
-            //var s = driver.Title;
-            //driver.Close();
-        }
-
-        public static void ArraySort()
-        {
-            var distinctArray = new[] { 1 };
+            var distinctArray = new[] { 1, 2, 3, 7 };
+            //var distinctArray = RandomSortedArray(MyArray, random);
 
             for (int i = 0; i < distinctArray.Length; i++)
             {
                 if (!(i + 2 >= distinctArray.Length))
                 {
-                    if (distinctArray[i] + 1 == distinctArray[i + 1] && distinctArray[i] + 2 == distinctArray[i + 2])
+                    if (distinctArray[i] + 2 == distinctArray[i + 2])
                     {
                         Console.Write(distinctArray[i] + " - ");
-                        for (int j = i; j < distinctArray.Length; j++)
+                        for (; i < distinctArray.Length; i++)
                         {
-                            if (!(j + 1 >= distinctArray.Length))
+                            if (!(i + 1 >= distinctArray.Length))
                             {
-                                if (distinctArray[j] + 1 != distinctArray[j + 1])
+                                if (distinctArray[i] + 1 != distinctArray[i + 1])
                                 {
-                                    Console.Write(distinctArray[j] + " ");
-                                    i = j;
+                                    Console.Write(distinctArray[i] + " ");
                                     break;
                                 }
+                            }
+                            else
+                            {
+                                Console.Write(distinctArray[i] + " ");
                             }
                         }
                     }
@@ -78,13 +55,39 @@ namespace SiteDownloader
                         Console.Write(distinctArray[i] + " ");
                     }
                 }
+                else if (i >= distinctArray.Length - 2)
+                {
+                    Console.Write(distinctArray[i] + " ");
+                }
 
             }
 
             Console.Read();
         }
 
-        public static void ShowArray(IEnumerable<int> array)
+
+        private static int[] RandomSortedArray(int[] array, Random random)
+        {
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(1, 50);
+            }
+
+            ShowArray(array);
+
+            Array.Sort(array);
+
+            ShowArray(array);
+
+            var distinctArray = array.Distinct().ToArray();
+
+            ShowArray(distinctArray);
+
+            return distinctArray;
+        }
+
+        private static void ShowArray(IEnumerable<int> array)
         {
             foreach (var element in array)
             {
@@ -94,28 +97,9 @@ namespace SiteDownloader
             Console.WriteLine();
         }
 
-        public static int[] PrepareArray()
-        {
-            Random a = new Random();
-            int[] myArray = new int[100];
-            for (int i = 0; i < myArray.Length; i++)
-            {
-                myArray[i] = a.Next(1, 100);
-            }
-
-            ShowArray(myArray);
-
-            Array.Sort(myArray);
-
-            ShowArray(myArray);
-
-            var distinctArray = myArray.Distinct().ToArray();
-
-            ShowArray(distinctArray);
-
-            return distinctArray;
-        }
+        #endregion
 
 
+       
     }
 }
