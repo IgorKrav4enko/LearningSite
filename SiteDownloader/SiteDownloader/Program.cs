@@ -3,7 +3,7 @@ using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SiteDownloader
+namespace StasTasks
 {
     class Program
     {
@@ -13,7 +13,6 @@ namespace SiteDownloader
         public static void Main(string[] args)
         {
             //ArrayWithHyphen();
-            //Console.WriteLine(RomeConverter("III"));
 
             Console.Read();
         }
@@ -98,8 +97,5 @@ namespace SiteDownloader
         }
 
         #endregion
-
-
-       
     }
 }

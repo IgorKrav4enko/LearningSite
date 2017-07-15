@@ -1,0 +1,16 @@
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\DB\Angular.mdf
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\DB\Angular_log.ldf
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\SiteDownloader.exe.config
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\SiteDownloader.exe
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\SiteDownloader.pdb
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\EntityFramework.dll
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\EntityFramework.SqlServer.dll
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\HtmlAgilityPack.dll
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\WebDriver.dll
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\EntityFramework.xml
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\EntityFramework.SqlServer.xml
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\HtmlAgilityPack.pdb
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\HtmlAgilityPack.xml
+C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\WebDriver.xml
+C:\LearningSite\SiteDownloader\SiteDownloader\obj\Debug\SiteDownloader.exe
+C:\LearningSite\SiteDownloader\SiteDownloader\obj\Debug\SiteDownloader.pdb
