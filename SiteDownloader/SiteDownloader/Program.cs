@@ -3,7 +3,7 @@ using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace StasTasks
+namespace SiteDownloader
 {
     class Program
     {
@@ -13,6 +13,8 @@ namespace StasTasks
         public static void Main(string[] args)
         {
             //ArrayWithHyphen();
+            //Console.WriteLine(RomeConverter("III"));
+            Console.WriteLine(RomeConverter());
 
             Console.Read();
         }
@@ -97,5 +99,60 @@ namespace StasTasks
         }
 
         #endregion
+
+
+        //2. Конвертация из римской в арабскую нумерацию чисел до 1000. Необязательно всех - главное алгоритм
+
+        private string a1 = "I";
+        private string a2 = "II";
+        private string a3 = "III";
+        private string a4 = "IV";
+        private string a5 = "V";
+        private string a6 = "VI";
+        private string a7 = "VII";
+        private string a8 = "VIII";
+        private string a9 = "IX";
+        private string a10 = "X";
+        private string a11 = "XI";
+        private string a12 = "XII";
+        private string a13 = "XIII";
+        private string a14 = "XIV";
+        private string a15 = "XV";
+        private string a16 = "XVI";
+        private string a17 = "XVII";
+        private string a18 = "XVIII";
+        private string a19 = "XIX";
+        private string a20 = "XX";
+        private string a38 = "XXXVIII";
+
+        public static string RomeConverter(string rome = "XIII")
+        {
+            //if (!(rome.Contains("X") || rome.Contains("V") || rome.Contains("I")))
+            //{
+            //    throw new ArgumentException();
+            //}
+            if (!(rome.Contains("X") || rome.Contains("V")))
+            {
+                return rome.Length.ToString();
+            }
+            if (rome.LastIndexOf("I") != -1 && rome.LastIndexOf("I") < rome.Length - 1)
+            {
+                var countOfTen = rome.Count(x => x == 'X') * 10;
+                var countOfFive = rome.Count(x => x == 'V') * 5;
+                var result = countOfFive + countOfTen - 1;
+                return result.ToString();
+            }
+            else
+            {
+                var countOfTen = rome.Count(x => x == 'X') * 10;
+                var countOfFive = rome.Count(x => x == 'V') * 5;
+                var countOfOne = rome.Count(x => x == 'I');
+                var result = countOfTen + countOfFive + countOfOne;
+                return result.ToString();
+            }
+        }
+
+        //3. Есть изображение на котором есть закрашенные фигуры.По факту двухмерный массив  с "черными" и "белыми" ячейками.Надо определить сколько фигур на рисунке
+
     }
 }
