@@ -14,3 +14,4 @@ C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\HtmlAgilityPack.xml
 C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\WebDriver.xml
 C:\LearningSite\SiteDownloader\SiteDownloader\obj\Debug\SiteDownloader.exe
 C:\LearningSite\SiteDownloader\SiteDownloader\obj\Debug\SiteDownloader.pdb
+C:\LearningSite\SiteDownloader\SiteDownloader\obj\Debug\StasTasks.csprojResolveAssemblyReference.cache
