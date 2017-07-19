@@ -17,16 +17,71 @@ namespace SiteDownloader
         {
             //ArrayWithHyphen();
 
-            foreach (var char1 in rome1_1000.Split(','))
-            {
-                Console.WriteLine(RomeConverter(char1) + ", ");
+            //foreach (var char1 in rome1_1000.Split(','))
+            //{
+            //    Console.WriteLine(RomeConverter(char1) + ", ");
 
-            }
+            //}
 
+            CountFigures(InititializePicture());
             Console.Read();
         }
 
-        
+        private static int[,] InititializePicture()
+        {
+            int[,] picture = {
+                {0, 1, 1, 1, 1, 0, 0, 0, 0, 0},
+                {0, 1, 0, 1, 1, 0, 0, 1, 1, 0},
+                {1, 0, 0, 1, 1, 1, 0, 0, 0, 0},
+                {1, 1, 0, 1, 0, 1, 1, 0, 0, 0},
+                {1, 0, 1, 0, 1, 0, 1, 0, 1, 1},
+                {1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
+                {0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
+                {0, 1, 1, 0, 0, 0, 0, 1, 1, 1},
+                {1, 0, 1, 0, 1, 0, 0, 1, 0, 0},
+                {1, 1, 1, 1, 0, 1, 0, 1, 0, 0}
+            };
+
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    Console.Write(picture[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            //int[,] picture = new int[10, 10];
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    for (int j = 0; j < 10; j++)
+            //    {
+            //        picture[i, j] = random.Next(2);
+            //        Console.Write(picture[i, j] + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            return picture;
+        }
+
+
+
+        private static int CountFigures(int[,] array)
+        {
+
+          
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    if (array[i, j] == 1)
+                    {
+                        Console.Write(i + " " + j + " ,");
+                    }
+                }
+            }
+            throw new NotImplementedException();
+        }
 
         #region ArrayWithHyphen
 
@@ -192,5 +247,5 @@ namespace SiteDownloader
 
 
     }
-
+    
 }
