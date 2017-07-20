@@ -1,6 +1,8 @@
 ﻿using System;
 using System.CodeDom;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -46,7 +48,17 @@ namespace SiteDownloader
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    Console.Write(picture[i, j] + " ");
+                    if (picture[i, j] == 1)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Blue;
+                        Console.Write(picture[i, j] + " ");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                    }
+                    else
+                    {
+                        Console.Write(picture[i, j] + " ");
+                    }
+
                 }
                 Console.WriteLine();
             }
@@ -69,15 +81,33 @@ namespace SiteDownloader
         private static int CountFigures(int[,] array)
         {
 
-          
+            Dictionary<Coordinats, List<Coordinats>> figureDictionary = new Dictionary<Coordinats, List<Coordinats>>();
+            List<Coordinats> coordList = new List<Coordinats>();
             for (int i = 0; i < 10; i++)
             {
                 for (int j = 0; j < 10; j++)
                 {
                     if (array[i, j] == 1)
                     {
-                        Console.Write(i + " " + j + " ,");
+                        Coordinats coord = new Coordinats(i, j);
+                        coordList.Add(coord);
+                        if (j < array.GetLength(1) - 1)
+                        {
+                            if (array[i, j + 1] == 1)
+                            {
+                                continue;
+                            }
+                        }
+                        figureDictionary.Add(new Coordinats(i, j), coordList); // TODO  придумать с начальными кооридинатами
+                        coordList = new List<Coordinats>();
                     }
+                }
+            }
+            for (int i = 0; i < figureDictionary.Count; i++)
+            {
+               // if (figureDictionary[i].)
+                {
+
                 }
             }
             throw new NotImplementedException();
@@ -247,5 +277,21 @@ namespace SiteDownloader
 
 
     }
-    
+    [DebuggerDisplay("I = {I} J ={J}")]
+    class Coordinats
+    {
+        public int I { get; set; }
+        public int J { get; set; }
+
+        public Coordinats(int i, int j)
+        {
+            I = i;
+            J = j;
+        }
+
+        //public override string ToString()
+        //{
+        //    return "" + I + J;
+        //}
+    }
 }
