@@ -82,6 +82,7 @@ namespace SiteDownloader
         {
 
             Dictionary<Coordinats, List<Coordinats>> figureDictionary = new Dictionary<Coordinats, List<Coordinats>>();
+            //List<List<Coordinats>> figureDictionary = new List<List<Coordinats>>();
             List<Coordinats> coordList = new List<Coordinats>();
             for (int i = 0; i < 10; i++)
             {
@@ -103,13 +104,30 @@ namespace SiteDownloader
                     }
                 }
             }
-            for (int i = 0; i < figureDictionary.Count; i++)
-            {
-               // if (figureDictionary[i].)
-                {
+            var coordinatses = figureDictionary.Values.SelectMany(x => x).ToList();
 
-                }
+
+            foreach (var coord in coordinatses)
+            {
+                var s = coordinatses.Where(x => x.I + 1 == coord.I && x.J == coord.J);
             }
+
+            //for (var z = 0; z < coordinatses.Count; z++)
+            //{
+            //    for (var x = 0; x < figureDictionary[z].Count; x++)
+            //    {
+            //        var a = coordinatses.Where(f => f.I == figureDictionary[z][x].I + 1 && f.J == figureDictionary[z][x].J); //
+
+
+            //    }
+            //}
+            //{
+            //    foreach (var coordinatse in figureDictionaryValue)
+            //    {
+            //        coordinatse.
+            //    }
+            //}
+
             throw new NotImplementedException();
         }
 
