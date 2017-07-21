@@ -104,13 +104,29 @@ namespace SiteDownloader
                     }
                 }
             }
-            var coordinatses = figureDictionary.Values.SelectMany(x => x).ToList();
 
-
-            foreach (var coord in coordinatses)
+            foreach (var figure in figureDictionary)
             {
-                var s = coordinatses.Where(x => x.I + 1 == coord.I && x.J == coord.J);
+                foreach (var coord in figure.Value)
+                {
+                    var coos = figureDictionary.Values.SelectMany(x => x).FirstOrDefault(y => y.I == coord.I + 1 && y.J == coord.J);
+                    if (coos != null)
+                    {
+                      var p = from figure in figureDictionary
+
+                        var addfig = figureDictionary.Select(x => x.Value.Where(y => y.I == coos.I && y.J == coos.J))
+                            ;
+                        //.FirstOrDefault(); //TODO override equals
+                    }
+                }
             }
+            //var coordinatses = figureDictionary.Values.SelectMany(x => x).ToList();
+
+
+            //foreach (var coord in coordinatses)
+            //{
+            //    var s = coordinatses.Where(x => x.I + 1 == coord.I && x.J == coord.J);
+            //}
 
             //for (var z = 0; z < coordinatses.Count; z++)
             //{
