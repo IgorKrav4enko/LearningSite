@@ -14,17 +14,23 @@ namespace SiteDownloader
 
         public static void Main(string[] args)
         {
+            //1
             //ArrayWithHyphen();
 
+            //2
             //foreach (var char1 in rome1_1000.Split(','))
             //{
             //    Console.WriteLine(RomeConverter(char1) + ", ");
 
             //}
-            for (int i = 0; i < 100; i++)
-            {
-                Console.WriteLine(CountFigures(InititializePicture()));
-            }
+
+            //3
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    Console.WriteLine(CountFigures(InititializePicture()));
+            //}
+
+            //4
 
 
             Console.Read();
@@ -189,7 +195,7 @@ namespace SiteDownloader
         }
         #endregion
 
-
+        #region Matrix
         //3. Есть изображение на котором есть закрашенные фигуры.По факту двухмерный массив  с "черными" и "белыми" ячейками.Надо определить сколько фигур на рисунке
 
         //private static int[,] picture = new int[10, 10];
@@ -319,8 +325,16 @@ namespace SiteDownloader
             return figureDictionary
                 .SelectMany(figure => figure.Value, (figure, val) => new { figure, val })
                 .Where(t => t.val.I == currentElement.I + upOrDown && t.val.J == currentElement.J)
-                .Select(t => t.figure).SingleOrDefault();
+                .Select(t => t.figure).SingleOrDefault();    
         }
+
+        //4. Реализовать глубокое клонирование объектов на C# забить на зацикленность любая глубина вложености(интересно про анонимные типы)
+        public static void DeepClone(object obj)
+        {
+
+        }
+
+        //5. Функция, которая вычисляет число Фибоначчи(элементы последовательности, в которой первые два числа равны либо 1 и 1, либо 0 и 1, а каждое последующее число равно сумме двух предыдущих чисел.). Перфоманс
 
 
     }
@@ -336,4 +350,8 @@ namespace SiteDownloader
             J = j;
         }
     }
+
+    #endregion
+
+   
 }
