@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Reflection;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text.RegularExpressions;
 
 namespace SiteDownloader
@@ -31,13 +34,40 @@ namespace SiteDownloader
             //    Console.WriteLine(CountFigures(InititializePicture()));
             //}
 
+            //4
+            Point point = new Point();
+            point.Name = "haha";
+            point.Coord = new Coordinats(1, 2);
+            point.Coord.ChangeX(100);
+            var pointClone = DeepClone(point);
+            pointClone.Name = "nana";
+            pointClone.Coord.I = 3;
+            pointClone.Coord.J = 4;
+            pointClone.Coord.ChangeX(200);
+            pointClone.ChangeListCoord(100);
+
+            //var pointClone2 = DeepCopy(point);
+            //pointClone2.Name = "baba";
+            //pointClone2.Coord.I = 5;
+            //pointClone2.Coord.J = 6;
+            //pointClone2.Coord.ChangeX(1000);
+            //pointClone2.ChangeListCoord(1000);
+
+            var s = point.ToString();
+            var s1 = pointClone.ToString();
+            //var s2 =pointClone2.ToString();
+
+            Console.WriteLine(s);
+            Console.WriteLine(s1);
+            //Console.WriteLine(s2);
+
             //5
-            var range = Enumerable.Range(1, 92);
-            foreach (var i in range)
-            {
-                Console.WriteLine(Fibonacchi(i));
-            }
-          
+            //var range = Enumerable.Range(1, 92);
+            //foreach (var i in range)
+            //{
+            //    Console.WriteLine(Fibonacchi(i));
+            //}
+
 
 
             Console.Read();
@@ -335,12 +365,51 @@ namespace SiteDownloader
                 .Select(t => t.figure).SingleOrDefault();
         }
         #endregion
-        //4. Реализовать глубокое клонирование объектов на C# забить на зацикленность любая глубина вложености(интересно про анонимные типы)
-        public static void DeepClone(object obj)
-        {
 
+        //4. Реализовать глубокое клонирование объектов на C#, забить на зацикленность, любая глубина вложености(интересно про анонимные типы)
+        public static T DeepClone<T>(T obj)
+        {
+            return CreateDeepCopy(obj);
         }
 
+        private static T CreateShallowCopy<T>(T obj)
+        {
+            MethodInfo memberwiseClone = obj.GetType().GetMethod("MemberwiseClone", BindingFlags.Instance | BindingFlags.NonPublic);
+
+            return (T)memberwiseClone.Invoke(obj, null);
+        }
+
+        private static T CreateDeepCopy<T>(T obj)
+        {
+
+            T copy = CreateShallowCopy(obj);
+
+            foreach (FieldInfo f in typeof(T).GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public))
+            {
+                object original = f.GetValue(obj);
+
+                f.SetValue(copy, CreateDeepCopy(original));
+            }
+
+
+
+            return copy;
+        }
+
+        public static T DeepCopy<T>(T objectToCopy)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
+                binaryFormatter.Serialize(memoryStream, objectToCopy);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                return (T)binaryFormatter.Deserialize(memoryStream);
+            }
+        }
+
+
+
+        #region Fibonacchi
         //5. Функция, которая вычисляет число Фибоначчи(элементы последовательности, в которой первые два числа равны либо 1 и 1, либо 0 и 1, а каждое последующее число равно сумме двух предыдущих чисел.). Перфоманс
 
         public static ulong Fibonacchi(int number)
@@ -368,11 +437,13 @@ namespace SiteDownloader
 
             return next;
         }
-
+        #endregion
     }
     [DebuggerDisplay("I = {I} J ={J}")]
     class Coordinats
     {
+        private int x;
+
         public int I { get; set; }
         public int J { get; set; }
 
@@ -380,6 +451,59 @@ namespace SiteDownloader
         {
             I = i;
             J = j;
+        }
+
+        public void ChangeX(int x)
+        {
+            this.x = x;
+        }
+
+        public int GetX()
+        {
+            return this.x;
+        }
+
+        public override string ToString()
+        {
+            return $"X = {this.I}, Y = {this.J}, X={this.GetX()}";
+        }
+    }
+
+    class Point
+    {
+        public string Name { get; set; }
+        public Coordinats Coord { get; set; }
+
+        public override string ToString()
+        {
+            var res = $"String name = {this.Name}, {this.Coord.ToString()} +\n";
+            foreach (var coordinat in this.listCoord)
+            {
+                res += coordinat.ToString()+"\n";
+            }
+
+            return res;
+        }
+
+        public List<Coordinats> listCoord { get; set; }
+
+        public Point()
+        {
+            listCoord = new List<Coordinats>();
+
+            for (var index = 0; index < 10; index++)
+            {
+                listCoord.Add(new Coordinats(index * 10, index * 5));
+            }
+        }
+
+        public void ChangeListCoord(int a)
+        {
+            foreach (var coordinat in this.listCoord)
+            {
+                coordinat.I = a;
+                coordinat.J = a * 2;
+            }
         }
     }
 
