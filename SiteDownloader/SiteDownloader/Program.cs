@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using System.Text.RegularExpressions;
 
 namespace SiteDownloader
@@ -30,13 +31,19 @@ namespace SiteDownloader
             //    Console.WriteLine(CountFigures(InititializePicture()));
             //}
 
-            //4
+            //5
+            var range = Enumerable.Range(1, 92);
+            foreach (var i in range)
+            {
+                Console.WriteLine(Fibonacchi(i));
+            }
+          
 
 
             Console.Read();
         }
 
-       
+
 
 
 
@@ -121,7 +128,7 @@ namespace SiteDownloader
 
         #endregion
 
-
+        #region RomeConverter
         //2. Конвертация из римской в арабскую нумерацию чисел до 1000. Необязательно всех - главное алгоритм
 
         enum RomeCharacters
@@ -134,7 +141,7 @@ namespace SiteDownloader
             D = 500,
             M = 1000
         }
-        #region RomeConverter
+
         private static readonly Regex reg0_1000 = new Regex("^(M{0,1})(C{0,3}|CD|DC{0,3}|CM)(X{0,3}|XL|LX{0,3}|XC)(I{0,3}|IV|VI{0,3}|IX)$");
 
         public static int RomeConverter(string romeNumber)
@@ -297,7 +304,7 @@ namespace SiteDownloader
                         }
                         else
                         {
-                            picture = FindSiblingPicture(figureDictionary, currentElement, 1); 
+                            picture = FindSiblingPicture(figureDictionary, currentElement, 1);
 
                         }
                         figureDictionary.Remove(picture.Key);
@@ -325,9 +332,9 @@ namespace SiteDownloader
             return figureDictionary
                 .SelectMany(figure => figure.Value, (figure, val) => new { figure, val })
                 .Where(t => t.val.I == currentElement.I + upOrDown && t.val.J == currentElement.J)
-                .Select(t => t.figure).SingleOrDefault();    
+                .Select(t => t.figure).SingleOrDefault();
         }
-
+        #endregion
         //4. Реализовать глубокое клонирование объектов на C# забить на зацикленность любая глубина вложености(интересно про анонимные типы)
         public static void DeepClone(object obj)
         {
@@ -336,6 +343,31 @@ namespace SiteDownloader
 
         //5. Функция, которая вычисляет число Фибоначчи(элементы последовательности, в которой первые два числа равны либо 1 и 1, либо 0 и 1, а каждое последующее число равно сумме двух предыдущих чисел.). Перфоманс
 
+        public static ulong Fibonacchi(int number)
+        {
+            if (number <= 0)
+            {
+                throw new ArgumentException("use positive numbers");
+            }
+            if (number == 1)
+            {
+                return 0;
+            }
+            ulong previous = 0;
+            ulong next = 1;
+
+            checked
+            {
+                for (int i = 0; i < number - 2; i++)
+                {
+                    ulong temp = next;
+                    next = previous + next;
+                    previous = temp;
+                }
+            }
+
+            return next;
+        }
 
     }
     [DebuggerDisplay("I = {I} J ={J}")]
@@ -351,7 +383,7 @@ namespace SiteDownloader
         }
     }
 
-    #endregion
 
-   
+
+
 }
