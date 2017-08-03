@@ -206,10 +206,6 @@
     <Content Include="App_Data\LearningSite_log.ldf">
       <DependentUpon>LearningSite.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\UserDB.mdf" />
-    <Content Include="App_Data\UserDB_log.ldf">
-      <DependentUpon>UserDB.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="DBContext\LearningSiteDBEntity.Context.tt">

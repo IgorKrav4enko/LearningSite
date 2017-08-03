@@ -1,5 +1,3 @@
-C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\DB\Angular.mdf
-C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\DB\Angular_log.ldf
 C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\SiteDownloader.exe.config
 C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\SiteDownloader.exe
 C:\LearningSite\SiteDownloader\SiteDownloader\bin\Debug\SiteDownloader.pdb

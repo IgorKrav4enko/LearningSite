@@ -77,48 +77,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBContext\Cour.cs">
-      <DependentUpon>SiteDBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBContext\Lesson.cs">
-      <DependentUpon>SiteDBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBContext\Site.cs">
-      <DependentUpon>SiteDBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBContext\SiteDBEntity.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SiteDBEntity.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBContext\SiteDBEntity.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SiteDBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBContext\SiteDBEntity.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SiteDBEntity.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DBContext\SubLesson.cs">
-      <DependentUpon>SiteDBEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBOperations\ContentLoader.cs" />
-    <Compile Include="DBOperations\CRUD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
-    </None>
-    <EntityDeploy Include="DBContext\SiteDBEntity.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SiteDBEntity.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DBContext\SiteDBEntity.edmx.diagram">
-      <DependentUpon>SiteDBEntity.edmx</DependentUpon>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -136,31 +100,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-    <Folder Include="rome1_1000\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DBContext\SiteDBEntity.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SiteDBEntity.edmx</DependentUpon>
-      <LastGenOutput>SiteDBEntity.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DBContext\SiteDBEntity.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SiteDBEntity.edmx</DependentUpon>
-      <LastGenOutput>SiteDBEntity.cs</LastGenOutput>
-    </Content>
-    <Content Include="DB\Angular.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DB\Angular_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Angular.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.30.0.1\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.30.0.1\build\Selenium.WebDriver.ChromeDriver.targets')" />
