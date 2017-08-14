@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AnswerQuestion.DAL;
+using AnswerQuestion.Models;
 
 namespace AnswerQuestion.Controllers
 {
@@ -10,6 +12,9 @@ namespace AnswerQuestion.Controllers
     {
         public ActionResult Index()
         {
+
+            AnsweQuestionContext a = new AnsweQuestionContext();
+            ViewBag.Answer = a.QAs.First().Answer;
             return View();
         }
 
