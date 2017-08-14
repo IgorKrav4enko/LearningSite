@@ -75,3 +75,5 @@ C:\LearningSite\SiteDownloader\AnswerQuestion\bin\EntityFramework.dll
 C:\LearningSite\SiteDownloader\AnswerQuestion\bin\EntityFramework.SqlServer.dll
 C:\LearningSite\SiteDownloader\AnswerQuestion\bin\EntityFramework.xml
 C:\LearningSite\SiteDownloader\AnswerQuestion\bin\EntityFramework.SqlServer.xml
+C:\LearningSite\SiteDownloader\AnswerQuestion\obj\Debug\AnswerQuestion.Migrations.deletetypeoftechnologycolumn.resources
+C:\LearningSite\SiteDownloader\AnswerQuestion\obj\Debug\AnswerQuestion.csproj.GenerateResource.Cache
