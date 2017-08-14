@@ -11,7 +11,7 @@ namespace AnswerQuestion.Models
         public string Answer { get; set; }
         public string Question { get; set; }
         //public ICollection<Tag> Tags { get; set; }
-        //public int TechnologyType { get; set; }
+        public string TechnologyType { get; set; }
     }
 
     //public class Tag

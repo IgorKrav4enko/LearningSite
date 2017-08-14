@@ -170,12 +170,19 @@
     <Compile Include="Migrations\201708141658353_delete type of technology column.Designer.cs">
       <DependentUpon>201708141658353_delete type of technology column.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708142056593_AddTechnologyName.cs" />
+    <Compile Include="Migrations\201708142056593_AddTechnologyName.Designer.cs">
+      <DependentUpon>201708142056593_AddTechnologyName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AnswerQuestion.cs" />
-    <Compile Include="Models\Tags.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\AnswerQuestion.DAL.AnsweQuestionContext.mdf" />
+    <Content Include="App_Data\AnswerQuestion.DAL.AnsweQuestionContext_log.ldf">
+      <DependentUpon>AnswerQuestion.DAL.AnsweQuestionContext.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -198,7 +205,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -213,9 +222,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
@@ -234,6 +241,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708141658353_delete type of technology column.resx">
       <DependentUpon>201708141658353_delete type of technology column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708142056593_AddTechnologyName.resx">
+      <DependentUpon>201708142056593_AddTechnologyName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
