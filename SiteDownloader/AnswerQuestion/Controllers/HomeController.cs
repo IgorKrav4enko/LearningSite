@@ -14,6 +14,8 @@ namespace AnswerQuestion.Controllers
         {
 
             AnsweQuestionContext a = new AnsweQuestionContext();
+            //a.QAs.Add(new QA() {TechnologyType = "C#", Question = "how", Answer = "That way"});
+            //a.SaveChanges();
             ViewBag.Answer = a.QAs.First().Answer;
             return View();
         }

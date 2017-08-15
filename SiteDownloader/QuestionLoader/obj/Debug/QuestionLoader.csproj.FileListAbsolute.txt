@@ -1,0 +1,11 @@
+C:\LearningSite\SiteDownloader\QuestionLoader\obj\Debug\QuestionLoader.csprojResolveAssemblyReference.cache
+C:\LearningSite\SiteDownloader\QuestionLoader\bin\Debug\QuestionLoader.exe.config
+C:\LearningSite\SiteDownloader\QuestionLoader\bin\Debug\QuestionLoader.exe
+C:\LearningSite\SiteDownloader\QuestionLoader\bin\Debug\QuestionLoader.pdb
+C:\LearningSite\SiteDownloader\QuestionLoader\obj\Debug\QuestionLoader.exe
+C:\LearningSite\SiteDownloader\QuestionLoader\obj\Debug\QuestionLoader.pdb
+C:\LearningSite\SiteDownloader\QuestionLoader\bin\Debug\WebDriver.dll
+C:\LearningSite\SiteDownloader\QuestionLoader\bin\Debug\WebDriver.xml
+C:\LearningSite\SiteDownloader\QuestionLoader\bin\Debug\HtmlAgilityPack.dll
+C:\LearningSite\SiteDownloader\QuestionLoader\bin\Debug\HtmlAgilityPack.pdb
+C:\LearningSite\SiteDownloader\QuestionLoader\bin\Debug\HtmlAgilityPack.xml
