@@ -1,6 +1,16 @@
-﻿@{
+﻿@using AnswerQuestion.Models
+@model IEnumerable<AnswerQuestion.Models.QA>
+@{
     ViewBag.Title = "About";
 }
+
+@foreach (QA b in Model)
+{
+        <div><p>@b.Question</p></div>
+        <div><p>@b.Answer</p></div>
+        <div><p>@b.TechnologyType</p></div>
+}
+
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 

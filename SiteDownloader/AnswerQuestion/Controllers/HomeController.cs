@@ -13,18 +13,22 @@ namespace AnswerQuestion.Controllers
         public ActionResult Index()
         {
 
-            AnsweQuestionContext a = new AnsweQuestionContext();
+            //AnsweQuestionContext a = new AnsweQuestionContext();
             //a.QAs.Add(new QA() {TechnologyType = "C#", Question = "how", Answer = "That way"});
             //a.SaveChanges();
-            ViewBag.Answer = a.QAs.First().Answer;
+            //ViewBag.Answer = a.QAs.ToList();
             return View();
         }
 
         public ActionResult About()
         {
+            AnsweQuestionContext a = new AnsweQuestionContext();
+
+            List<QA> QA = a.QAs.ToList();
+
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return View(QA);
         }
 
         public ActionResult Contact()
