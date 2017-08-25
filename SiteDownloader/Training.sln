@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StasTasks", "SiteDownloader\StasTasks.csproj", "{95C75920-240B-4468-974A-BAA52757665C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson", "Lesson", "{1DB95942-AF99-4036-951A-1637F5E25756}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSE", "CSE", "{30C80649-B0BE-424B-A244-91FA0A24BB7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSELesson", "CSELesson\CSELesson.csproj", "{113E9944-969B-465A-A43B-36CAE9024FD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +21,16 @@ Global
 		{95C75920-240B-4468-974A-BAA52757665C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95C75920-240B-4468-974A-BAA52757665C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95C75920-240B-4468-974A-BAA52757665C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{113E9944-969B-465A-A43B-36CAE9024FD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{113E9944-969B-465A-A43B-36CAE9024FD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{113E9944-969B-465A-A43B-36CAE9024FD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{113E9944-969B-465A-A43B-36CAE9024FD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30C80649-B0BE-424B-A244-91FA0A24BB7B} = {1DB95942-AF99-4036-951A-1637F5E25756}
+		{113E9944-969B-465A-A43B-36CAE9024FD2} = {30C80649-B0BE-424B-A244-91FA0A24BB7B}
 	EndGlobalSection
 EndGlobal

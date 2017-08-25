@@ -10,6 +10,11 @@ namespace CSELesson
     {
         static void Main(string[] args)
         {
+            Parent parent = new Parent();
+            parent.ShowFields();
+            Child child = new Child();
+            child.ShowFields();
+
         }
     }
 }

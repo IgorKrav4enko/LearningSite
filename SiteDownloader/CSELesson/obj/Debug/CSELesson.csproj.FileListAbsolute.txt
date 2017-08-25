@@ -1,0 +1,6 @@
+C:\LearningSite\SiteDownloader\CSELesson\bin\Debug\CSELesson.exe.config
+C:\LearningSite\SiteDownloader\CSELesson\bin\Debug\CSELesson.exe
+C:\LearningSite\SiteDownloader\CSELesson\bin\Debug\CSELesson.pdb
+C:\LearningSite\SiteDownloader\CSELesson\obj\Debug\CSELesson.csprojResolveAssemblyReference.cache
+C:\LearningSite\SiteDownloader\CSELesson\obj\Debug\CSELesson.exe
+C:\LearningSite\SiteDownloader\CSELesson\obj\Debug\CSELesson.pdb
