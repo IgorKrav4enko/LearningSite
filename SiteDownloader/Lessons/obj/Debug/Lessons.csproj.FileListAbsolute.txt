@@ -1,0 +1,6 @@
+C:\LearningSite\SiteDownloader\Lessons\bin\Debug\Lessons.exe.config
+C:\LearningSite\SiteDownloader\Lessons\bin\Debug\Lessons.exe
+C:\LearningSite\SiteDownloader\Lessons\bin\Debug\Lessons.pdb
+C:\LearningSite\SiteDownloader\Lessons\obj\Debug\Lessons.csprojResolveAssemblyReference.cache
+C:\LearningSite\SiteDownloader\Lessons\obj\Debug\Lessons.exe
+C:\LearningSite\SiteDownloader\Lessons\obj\Debug\Lessons.pdb
